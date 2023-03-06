@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>edu.in.mckvie</groupId>
-	<artifactId>CampusNexus</artifactId>
+	<artifactId>campus-nexus-backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CampusNexus</name>
 	<description>A cloud based application API for the students where the details of a students is fully digitalized through some portal</description>
@@ -60,6 +60,18 @@
 <!--			<artifactId>spring-security-test</artifactId>-->
 <!--			<scope>test</scope>-->
 <!--		</dependency>-->
+		<dependency>
+			<groupId>com.razorpay</groupId>
+			<artifactId>razorpay-java</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.twilio.sdk/twilio -->
+		<dependency>
+			<groupId>com.twilio.sdk</groupId>
+			<artifactId>twilio</artifactId>
+			<version>9.1.2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
