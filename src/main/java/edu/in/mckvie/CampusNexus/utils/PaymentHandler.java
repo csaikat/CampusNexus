@@ -22,13 +22,13 @@ public class PaymentHandler {
     @Value("${razorpay.key_secret}")
     private  String key_secret;
     @Autowired
-    private PaymentRepository mckvPaymentOrderRepository;
+    private PaymentRepository paymentRepository;
     Logger logger= LoggerFactory.getLogger(PaymentController.class);
     public PaymentDetails createOrder(int amount) throws RazorpayException {
         RazorpayClient razorpay = new RazorpayClient(this.key_id,this.key_secret);
         //create new order
         Order order=null;
-        PaymentDetails mckvPaymentOrder=null;
+        PaymentDetails paymentDetails=null;
         try {
             JSONObject orderRequest = new JSONObject();
             orderRequest.put("amount", amount*100);
@@ -36,21 +36,21 @@ public class PaymentHandler {
             orderRequest.put("receipt", "txn_235425_11");
             order = razorpay.orders.create(orderRequest);
             //save order in database
-            mckvPaymentOrder=new PaymentDetails();
-            mckvPaymentOrder.setPaymentId(null);
-            mckvPaymentOrder.setStatus(order.get("status"));
-            mckvPaymentOrder.setAmount(order.get("amount")+"");
-            mckvPaymentOrder.setOrderId(order.get("id"));
-            mckvPaymentOrder.setReceipt(order.get("receipt"));
-            mckvPaymentOrder.setCurrency(order.get("currency"));
-            mckvPaymentOrder.setCreated_on(new Date());
-            mckvPaymentOrderRepository.save(mckvPaymentOrder);
+            paymentDetails=new PaymentDetails();
+            paymentDetails.setPaymentId(null);
+            paymentDetails.setStatus(order.get("status"));
+            paymentDetails.setAmount(order.get("amount")+"");
+            paymentDetails.setOrderId(order.get("id"));
+            paymentDetails.setReceipt(order.get("receipt"));
+            paymentDetails.setCurrency(order.get("currency"));
+            paymentDetails.setCreated_on(new Date());
+            paymentRepository.save(paymentDetails);
 
             logger.info("order: {}",order);
-            logger.info("order: {}",mckvPaymentOrder);
+            logger.info("order: {}",paymentDetails);
         } catch (RazorpayException e) {
             logger.error(e.getMessage());
         }
-        return mckvPaymentOrder;
+        return paymentDetails;
     }
 }
