@@ -4,10 +4,10 @@ import com.razorpay.RazorpayException;
 import edu.in.mckvie.CampusNexus.controllers.PaymentController;
 import edu.in.mckvie.CampusNexus.entities.PaymentDetails;
 import edu.in.mckvie.CampusNexus.exceptions.ResourceNotFoundException;
+import edu.in.mckvie.CampusNexus.filter.CreateOrderFilter;
 import edu.in.mckvie.CampusNexus.payloads.PaymentDetailsDTO;
 import edu.in.mckvie.CampusNexus.payloads.PaymentHandlerDTO;
 import edu.in.mckvie.CampusNexus.repositories.PaymentRepository;
-import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import edu.in.mckvie.CampusNexus.services.PaymentService;
 import edu.in.mckvie.CampusNexus.utils.PaymentHandler;
 import org.modelmapper.ModelMapper;
@@ -25,24 +25,25 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentHandler paymentHandler;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private CreateOrderFilter createOrderFilter;
+
     Logger logger= LoggerFactory.getLogger(PaymentController.class);
 
-
-    @Autowired
-    UserRepository userRepository;
     @Override
     public PaymentDetailsDTO createOrder(PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException {
+        PaymentDetails savedPaymentDetails=null;
         PaymentDetails paymentDetails=this.modelMapper.map(paymentDetailsDTO,PaymentDetails.class);
         int amount=Integer.parseInt(paymentDetails.getAmount());
         String uRoll=paymentDetailsDTO.getUniversityRollNumber();
         logger.info("amount= {} ",amount);
         logger.info("uRoll= {} ",uRoll);
         //filter
-        int id=userRepository.findByUniversityRollNumber(uRoll).get().getId();
-        logger.info("id= {} ",id);
-        System.out.println(userRepository.findOrderIdById(id));
-
-        PaymentDetails savedPaymentDetails=paymentHandler.createOrder(amount,uRoll);
+        String order_id=createOrderFilter.isOrderAlreadyCreated(uRoll);
+        if(order_id== null)
+            savedPaymentDetails=paymentHandler.createOrder(amount,uRoll);
+        else
+            savedPaymentDetails=paymentRepository.findByOrderId(order_id);
         return this.modelMapper.map(savedPaymentDetails,PaymentDetailsDTO.class);
     }
     @Override
