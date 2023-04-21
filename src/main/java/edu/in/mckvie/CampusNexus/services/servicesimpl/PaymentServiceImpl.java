@@ -7,6 +7,7 @@ import edu.in.mckvie.CampusNexus.exceptions.ResourceNotFoundException;
 import edu.in.mckvie.CampusNexus.payloads.PaymentDetailsDTO;
 import edu.in.mckvie.CampusNexus.payloads.PaymentHandlerDTO;
 import edu.in.mckvie.CampusNexus.repositories.PaymentRepository;
+import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import edu.in.mckvie.CampusNexus.services.PaymentService;
 import edu.in.mckvie.CampusNexus.utils.PaymentHandler;
 import org.modelmapper.ModelMapper;
@@ -25,13 +26,22 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private ModelMapper modelMapper;
     Logger logger= LoggerFactory.getLogger(PaymentController.class);
+
+
+    @Autowired
+    UserRepository userRepository;
     @Override
     public PaymentDetailsDTO createOrder(PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException {
         PaymentDetails paymentDetails=this.modelMapper.map(paymentDetailsDTO,PaymentDetails.class);
         int amount=Integer.parseInt(paymentDetails.getAmount());
         String uRoll=paymentDetailsDTO.getUniversityRollNumber();
         logger.info("amount= {} ",amount);
-        logger.info("amount= {} ",uRoll);
+        logger.info("uRoll= {} ",uRoll);
+        //filter
+        int id=userRepository.findByUniversityRollNumber(uRoll).get().getId();
+        logger.info("id= {} ",id);
+        System.out.println(userRepository.findOrderIdById(id));
+
         PaymentDetails savedPaymentDetails=paymentHandler.createOrder(amount,uRoll);
         return this.modelMapper.map(savedPaymentDetails,PaymentDetailsDTO.class);
     }
