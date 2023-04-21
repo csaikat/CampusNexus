@@ -1,8 +1,7 @@
 package edu.in.mckvie.CampusNexus.payloads;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import edu.in.mckvie.CampusNexus.entities.Role;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -27,4 +26,13 @@ public class UserDto {
     private String password;
     private Set<RoleDTO> roles=new HashSet<>();
     private Date created_on;
+    @JsonProperty
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @JsonIgnore
+    public String getPassword() {
+        return password;
+    }
 }

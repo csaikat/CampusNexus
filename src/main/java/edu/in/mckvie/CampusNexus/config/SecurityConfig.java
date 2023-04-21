@@ -17,7 +17,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import  org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -35,7 +35,7 @@ public class SecurityConfig {
     @Autowired
     JwtAuthenticationFilter jwtAuthenticationFilter;
     public static final String [] PUBLIC_URL={
-            "/api/v1/auth/**","/pdf/**","/excel/**",
+            "/api/v1/auth/**","/pdf/**","/excel/**","/api/v1/user/**"
     };
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -80,6 +80,17 @@ public class SecurityConfig {
         provider.setPasswordEncoder(this.passwordEncoder());
         return provider;
     }
+//    @Bean("jasyptStringEncryptor")
+//    public StandardPBEStringEncryptor stringEncryptor() {
+//        StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+//        encryptor.setPassword("mysecretkey");
+//        encryptor.setAlgorithm("PBEWithMD5AndDES");
+//        encryptor.setKeyObtentionIterations(1000);
+//        encryptor.setSaltGenerator(new RandomSaltGenerator());
+//        encryptor.setStringOutputType("base64");
+//        encryptor.setProviderName("SunJCE");
+//        return encryptor;
+//    }
     @Bean
     public FilterRegistrationBean<CorsFilter> coresFilter() {
         UrlBasedCorsConfigurationSource source=new UrlBasedCorsConfigurationSource();
@@ -97,8 +108,9 @@ public class SecurityConfig {
         config.setMaxAge(3600L);
 
         source.registerCorsConfiguration("/**", config);
-
-        return new FilterRegistrationBean<>(new CorsFilter(source));
+        FilterRegistrationBean<CorsFilter> bean=new FilterRegistrationBean<>(new CorsFilter(source));
+        bean.setOrder(-110);
+        return bean ;
 
     }
 }

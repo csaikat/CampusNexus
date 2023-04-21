@@ -29,8 +29,10 @@ public class PaymentServiceImpl implements PaymentService {
     public PaymentDetailsDTO createOrder(PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException {
         PaymentDetails paymentDetails=this.modelMapper.map(paymentDetailsDTO,PaymentDetails.class);
         int amount=Integer.parseInt(paymentDetails.getAmount());
+        String uRoll=paymentDetailsDTO.getUniversityRollNumber();
         logger.info("amount= {} ",amount);
-        PaymentDetails savedPaymentDetails=paymentHandler.createOrder(amount);
+        logger.info("amount= {} ",uRoll);
+        PaymentDetails savedPaymentDetails=paymentHandler.createOrder(amount,uRoll);
         return this.modelMapper.map(savedPaymentDetails,PaymentDetailsDTO.class);
     }
     @Override

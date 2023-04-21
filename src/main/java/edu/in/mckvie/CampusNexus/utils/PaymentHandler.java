@@ -5,7 +5,9 @@ import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
 import edu.in.mckvie.CampusNexus.controllers.PaymentController;
 import edu.in.mckvie.CampusNexus.entities.PaymentDetails;
+import edu.in.mckvie.CampusNexus.entities.User;
 import edu.in.mckvie.CampusNexus.repositories.PaymentRepository;
+import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,8 +25,10 @@ public class PaymentHandler {
     private  String key_secret;
     @Autowired
     private PaymentRepository paymentRepository;
+    @Autowired
+    UserRepository userRepository;
     Logger logger= LoggerFactory.getLogger(PaymentController.class);
-    public PaymentDetails createOrder(int amount) throws RazorpayException {
+    public PaymentDetails createOrder(int amount,String uRoll) throws RazorpayException {
         RazorpayClient razorpay = new RazorpayClient(this.key_id,this.key_secret);
         //create new order
         Order order=null;
@@ -44,6 +48,9 @@ public class PaymentHandler {
             paymentDetails.setReceipt(order.get("receipt"));
             paymentDetails.setCurrency(order.get("currency"));
             paymentDetails.setCreated_on(new Date());
+            User u=new User();
+            u.setId(userRepository.findByUniversityRollNumber(uRoll).get().getId());
+            paymentDetails.setUser(u);
             paymentRepository.save(paymentDetails);
 
             logger.info("order: {}",order);

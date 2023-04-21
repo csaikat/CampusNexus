@@ -1,7 +1,5 @@
 package edu.in.mckvie.CampusNexus.payloads;
 
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
@@ -20,5 +18,6 @@ public class PaymentDetailsDTO {
     @NotEmpty(message = "must have currency")
     private String currency;
     private UserDto userDto;
+    private String universityRollNumber;
     private Date created_on;
 }

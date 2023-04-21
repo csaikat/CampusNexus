@@ -1,5 +1,6 @@
 package edu.in.mckvie.CampusNexus.controllers;
 
+import edu.in.mckvie.CampusNexus.entities.User;
 import edu.in.mckvie.CampusNexus.exceptions.AuthException;
 import edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest;
 import edu.in.mckvie.CampusNexus.payloads.JwtAuthResponse;
@@ -7,6 +8,7 @@ import edu.in.mckvie.CampusNexus.payloads.UserDto;
 import edu.in.mckvie.CampusNexus.security.JwtTokenHelper;
 import edu.in.mckvie.CampusNexus.services.servicesimpl.UserServiceImpl;
 import jakarta.validation.Valid;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +19,12 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -30,6 +37,10 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private UserServiceImpl userService;
+    @Autowired
+    private ModelMapper modelMapper;
+
+
     @PostMapping("/authenticate")
     public ResponseEntity<JwtAuthResponse> createToken(@RequestBody JwtAuthRequest request) throws Exception {
         Authentication authentication=this.authenticate(request.getUsername(),request.getPassword());
@@ -38,13 +49,19 @@ public class AuthController {
             String token= this.jwtTokenHelper.generateToken(userDetails);
             JwtAuthResponse response=new JwtAuthResponse();
             response.setToken(token);
+            response.setUser(this.modelMapper.map((User)userDetails,UserDto.class));
             return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
         }
        else{
            throw new UsernameNotFoundException("invalid user request!!");
         }
     }
-
+//    @PostMapping("/authenticate")
+//    public String test(@RequestBody JwtAuthRequest request){
+//        System.out.println(request);
+//
+//        return "ok";
+//    }
     private Authentication authenticate(String username, String password) throws Exception {
         Authentication authentication=null;
         UsernamePasswordAuthenticationToken authenticationToken=

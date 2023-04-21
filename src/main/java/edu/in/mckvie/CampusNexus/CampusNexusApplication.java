@@ -3,7 +3,6 @@ package edu.in.mckvie.CampusNexus;
 
 import edu.in.mckvie.CampusNexus.config.AppConstants;
 import edu.in.mckvie.CampusNexus.entities.Role;
-import edu.in.mckvie.CampusNexus.entities.User;
 import edu.in.mckvie.CampusNexus.repositories.RoleRepository;
 import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -13,13 +12,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @SpringBootApplication
 public class CampusNexusApplication implements CommandLineRunner {

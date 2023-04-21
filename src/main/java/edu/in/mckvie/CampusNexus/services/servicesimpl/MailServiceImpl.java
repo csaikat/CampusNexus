@@ -5,14 +5,16 @@ import edu.in.mckvie.CampusNexus.services.MailService;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.net.InetAddress;
 import java.util.Properties;
 @Service
 public class MailServiceImpl implements MailService {
-    private String username="paulmonish.mp@gmail.com";
-    private String password="tehnmosxdbiaapzx";
+    @Value("${spring.mail.username}")
+    private String username;
+    @Value("${spring.mail.password}")
+    private String password;
     @Override
     public boolean sendMail(MailDTO mailDTO) {
         boolean flag=false;

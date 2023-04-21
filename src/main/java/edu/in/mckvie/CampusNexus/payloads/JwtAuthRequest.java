@@ -1,13 +1,16 @@
 package edu.in.mckvie.CampusNexus.payloads;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class JwtAuthRequest {
     private String username;
     private String password;
+
+    public JwtAuthRequest(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 }

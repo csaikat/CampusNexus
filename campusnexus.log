@@ -1,0 +1,296 @@
+[2023-04-17 00:16:28,903] [org.springframework.boot.StartupInfoLogger] [restartedMain] [51] [INFO ] Starting CampusNexusApplication using Java 17.0.4 with PID 8660 (C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes started by monis in C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend)
+[2023-04-17 00:16:28,911] [org.springframework.boot.SpringApplication] [restartedMain] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-04-17 00:16:29,077] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2023-04-17 00:16:29,078] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2023-04-17 00:16:32,749] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-04-17 00:16:32,931] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 164 ms. Found 4 JPA repository interfaces.
+[2023-04-17 00:16:35,701] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [108] [INFO ] Tomcat initialized with port(s): 5001 (http)
+[2023-04-17 00:16:35,732] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2023-04-17 00:16:35,734] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.5]
+[2023-04-17 00:16:35,885] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2023-04-17 00:16:35,886] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [291] [INFO ] Root WebApplicationContext: initialization completed in 6807 ms
+[2023-04-17 00:16:36,158] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-04-17 00:16:36,266] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-17 00:16:36,798] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2023-04-17 00:16:37,613] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76369c98
+[2023-04-17 00:16:37,617] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-04-17 00:16:37,768] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [restartedMain] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-04-17 00:16:40,933] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-17 00:16:40,958] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-04-17 00:16:43,390] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [231] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-04-17 00:16:43,851] [org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver] [restartedMain] [58] [INFO ] Exposing 1 endpoint(s) beneath base path '/actuator'
+[2023-04-17 00:16:43,943] [org.springframework.security.web.DefaultSecurityFilterChain] [restartedMain] [54] [INFO ] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1daa2e9c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@54415b77, org.springframework.security.web.context.SecurityContextHolderFilter@75ca7fc8, org.springframework.security.web.header.HeaderWriterFilter@3d9bdfc, org.springframework.security.web.authentication.logout.LogoutFilter@b67672b, edu.in.mckvie.CampusNexus.security.JwtAuthenticationFilter@6d1b321e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@555f0e45, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@36ba40c0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@419be35, org.springframework.security.web.session.SessionManagementFilter@5b5eb6a6, org.springframework.security.web.access.ExceptionTranslationFilter@768cd39c, org.springframework.security.web.access.intercept.AuthorizationFilter@7906149a]
+[2023-04-17 00:16:44,402] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [59] [INFO ] LiveReload server is running on port 35729
+[2023-04-17 00:16:44,569] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [220] [INFO ] Tomcat started on port(s): 5001 (http) with context path ''
+[2023-04-17 00:16:44,599] [org.springframework.boot.StartupInfoLogger] [restartedMain] [57] [INFO ] Started CampusNexusApplication in 16.766 seconds (process running for 18.455)
+[2023-04-17 00:17:01,094] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-04-17 00:17:01,105] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-04-17 00:17:01,128] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-04-17 00:17:10,700] [org.springframework.boot.StartupInfoLogger] [restartedMain] [51] [INFO ] Starting CampusNexusApplication using Java 17.0.4 with PID 11344 (C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes started by monis in C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend)
+[2023-04-17 00:17:10,706] [org.springframework.boot.SpringApplication] [restartedMain] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-04-17 00:17:10,794] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2023-04-17 00:17:10,795] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2023-04-17 00:17:13,043] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-04-17 00:17:13,298] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 232 ms. Found 4 JPA repository interfaces.
+[2023-04-17 00:17:14,579] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [108] [INFO ] Tomcat initialized with port(s): 5001 (http)
+[2023-04-17 00:17:14,601] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2023-04-17 00:17:14,602] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.5]
+[2023-04-17 00:17:14,731] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2023-04-17 00:17:14,733] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [291] [INFO ] Root WebApplicationContext: initialization completed in 3937 ms
+[2023-04-17 00:17:14,958] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-04-17 00:17:15,042] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-17 00:17:15,520] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2023-04-17 00:17:16,150] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35989038
+[2023-04-17 00:17:16,154] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-04-17 00:17:16,243] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [restartedMain] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-04-17 00:17:17,663] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-17 00:17:17,679] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-04-17 00:17:18,764] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [231] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-04-17 00:17:19,425] [org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver] [restartedMain] [58] [INFO ] Exposing 1 endpoint(s) beneath base path '/actuator'
+[2023-04-17 00:17:19,513] [org.springframework.security.web.DefaultSecurityFilterChain] [restartedMain] [54] [INFO ] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3267964e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@742e382a, org.springframework.security.web.context.SecurityContextHolderFilter@4014ac29, org.springframework.security.web.header.HeaderWriterFilter@7fd68eea, org.springframework.security.web.authentication.logout.LogoutFilter@7865dd38, edu.in.mckvie.CampusNexus.security.JwtAuthenticationFilter@299bdb10, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b648058, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bd72c26, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ad6dc66, org.springframework.security.web.session.SessionManagementFilter@1ebd9d14, org.springframework.security.web.access.ExceptionTranslationFilter@7e889537, org.springframework.security.web.access.intercept.AuthorizationFilter@7c775f0f]
+[2023-04-17 00:17:19,855] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [59] [INFO ] LiveReload server is running on port 35729
+[2023-04-17 00:17:19,962] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [220] [INFO ] Tomcat started on port(s): 5001 (http) with context path ''
+[2023-04-17 00:17:19,984] [org.springframework.boot.StartupInfoLogger] [restartedMain] [57] [INFO ] Started CampusNexusApplication in 10.532 seconds (process running for 11.468)
+[2023-04-17 00:44:10,998] [org.apache.juli.logging.DirectJDKLog] [http-nio-5001-exec-1] [173] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-04-17 00:44:11,016] [org.springframework.web.servlet.FrameworkServlet] [http-nio-5001-exec-1] [532] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2023-04-17 00:44:11,085] [org.springframework.web.servlet.FrameworkServlet] [http-nio-5001-exec-1] [554] [INFO ] Completed initialization in 69 ms
+[2023-04-17 00:58:10,343] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-3] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=maityishika45@gmail.com)]
+[2023-04-17 01:08:07,582] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-7] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=test.emp1@cdac.in)]
+[2023-04-17 01:13:14,061] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-1] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=maityishika45@gmail.com)]
+[2023-04-17 01:18:22,418] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-4] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=rudraneelghosh@gmail.com)]
+[2023-04-17 01:19:05,251] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-10] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('FZ6ZhrdIvf9Yp3kk8lTpv8N1jN0HabNVsRV2+8xVj4JjbXim965XOklgiLNlSU8jzSAkz4es+Z0J8HYSJquobw==')]
+[2023-04-17 01:19:20,331] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-5] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('FZ6ZhrdIvf9Yp3kk8lTpv8N1jN0HabNVsRV2+8xVj4JjbXim965XOklgiLNlSU8jzSAkz4es+Z0J8HYSJquobw==')]
+[2023-04-17 01:19:42,196] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-1] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('iUr11Y0klB6eAyQt9fR4ybNxHAjfPJjglSP8svvJgnvecDkiCsNcmEX6+Y+/pcKTTW6IPJ1OQaoFjP0AWkPJSA==')]
+[2023-04-17 01:21:19,698] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-8] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('4o16RjjpuaiIUTSb74a0pjFz3q3gX5vsi489wkAWuQHN3ou50Y6RpFlH+3RSVzWxqRB43aYu9hs2jek+kMl9Hg==')]
+[2023-04-17 01:21:41,183] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-9] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('FZ6ZhrdIvf9Yp3kk8lTpv8N1jN0HabNVsRV2+8xVj4JjbXim965XOklgiLNlSU8jzSAkz4es+Z0J8HYSJquobw==')]
+[2023-04-17 01:22:44,271] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-10] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('4o16RjjpuaiIUTSb74a0pjFz3q3gX5vsi489wkAWuQHN3ou50Y6RpFlH+3RSVzWxr3P8aUbm03A6AHHrxrr5+Q==')]
+[2023-04-17 01:23:36,673] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-5] [207] [WARN ] Resolved [edu.in.mckvie.CampusNexus.exceptions.AuthException: Invalid Username And Password !!]
+[2023-04-17 01:34:01,235] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-8] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('FZ6ZhrdIvf9Yp3kk8lTpv8N1jN0HabNVsRV2+8xVj4JjbXim965XOklgiLNlSU8jzSAkz4es+Z0J8HYSJquobw==')]
+[2023-04-17 01:34:09,941] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-4] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('FZ6ZhrdIvf9Yp3kk8lTpv8N1jN0HabNVsRV2+8xVj4JjbXim965XOklgiLNlSU8jzSAkz4es+Z0J8HYSJquobw==')]
+[2023-04-17 01:36:00,881] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-3] [207] [WARN ] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `edu.in.mckvie.CampusNexus.payloads.JwtAuthRequest` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('iUr11Y0klB6eAyQt9fR4ybNxHAjfPJjglSP8svvJgnvecDkiCsNcmEX6+Y+/pcKTIO2ftYvEn2KUaay/cdycbUvDXZ/zRStj0Tl76VobCc0=')]
+[2023-04-17 01:40:31,429] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-6] [33] [INFO ] amount= 1000 
+[2023-04-17 01:40:31,428] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-3] [33] [INFO ] amount= 1000 
+[2023-04-17 01:40:31,432] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-6] [34] [INFO ] amount= 12344567895 
+[2023-04-17 01:40:31,435] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-3] [34] [INFO ] amount= 12344567895 
+[2023-04-17 01:40:32,660] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-3] [56] [INFO ] order: {"amount":100000,"amount_paid":0,"notes":[],"created_at":1681675833,"amount_due":100000,"currency":"INR","receipt":"txn_235425_11","id":"order_LeadJbi5ZKy5zj","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 01:40:32,661] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-6] [56] [INFO ] order: {"amount":100000,"amount_paid":0,"notes":[],"created_at":1681675833,"amount_due":100000,"currency":"INR","receipt":"txn_235425_11","id":"order_LeadJhDoo984oP","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 01:40:32,662] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-6] [57] [INFO ] order: PaymentDetails(id=453, orderId=order_LeadJhDoo984oP, amount=100000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=102, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 01:40:32 IST 2023)
+[2023-04-17 01:40:32,662] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-3] [57] [INFO ] order: PaymentDetails(id=452, orderId=order_LeadJbi5ZKy5zj, amount=100000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=102, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 01:40:32 IST 2023)
+[2023-04-17 01:47:44,785] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-2] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=maityishika45@gmail.com)]
+[2023-04-17 01:47:53,298] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-8] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=maityishika45@gmail.com)]
+[2023-04-17 01:49:53,867] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-3] [207] [WARN ] Resolved [edu.in.mckvie.CampusNexus.exceptions.AuthException: Invalid Username And Password !!]
+[2023-04-17 01:53:05,711] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-10] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: monish]
+[2023-04-17 02:01:43,722] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-9] [207] [WARN ] Resolved [edu.in.mckvie.CampusNexus.exceptions.AuthException: Invalid Username And Password !!]
+[2023-04-17 02:03:34,520] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-5] [33] [INFO ] amount= 1000 
+[2023-04-17 02:03:34,522] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-5] [34] [INFO ] amount= 12344567895 
+[2023-04-17 02:03:37,349] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-5] [56] [INFO ] order: {"amount":100000,"amount_paid":0,"notes":[],"created_at":1681677217,"amount_due":100000,"currency":"INR","receipt":"txn_235425_11","id":"order_Leb1h7g4kmCW60","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 02:03:37,350] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-5] [57] [INFO ] order: PaymentDetails(id=454, orderId=order_Leb1h7g4kmCW60, amount=100000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=102, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 02:03:37 IST 2023)
+[2023-04-17 02:12:29,495] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-9] [33] [INFO ] amount= 50 
+[2023-04-17 02:12:29,496] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-9] [34] [INFO ] amount= 12344567893 
+[2023-04-17 02:12:30,115] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-9] [56] [INFO ] order: {"amount":5000,"amount_paid":0,"notes":[],"created_at":1681677750,"amount_due":5000,"currency":"INR","receipt":"txn_235425_11","id":"order_LebB4lPKVwClyd","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 02:12:30,115] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-9] [57] [INFO ] order: PaymentDetails(id=455, orderId=order_LebB4lPKVwClyd, amount=5000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=1, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 02:12:30 IST 2023)
+[2023-04-17 02:19:55,374] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-04-17 02:19:55,385] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-04-17 02:19:55,397] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-04-17 09:57:40,132] [org.springframework.boot.StartupInfoLogger] [restartedMain] [51] [INFO ] Starting CampusNexusApplication using Java 17.0.4 with PID 5200 (C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes started by monis in C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend)
+[2023-04-17 09:57:40,140] [org.springframework.boot.SpringApplication] [restartedMain] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-04-17 09:57:40,297] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2023-04-17 09:57:40,298] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2023-04-17 09:57:43,051] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-04-17 09:57:43,225] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 154 ms. Found 4 JPA repository interfaces.
+[2023-04-17 09:57:45,174] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [108] [INFO ] Tomcat initialized with port(s): 5001 (http)
+[2023-04-17 09:57:45,199] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2023-04-17 09:57:45,200] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.5]
+[2023-04-17 09:57:45,402] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2023-04-17 09:57:45,403] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [291] [INFO ] Root WebApplicationContext: initialization completed in 5103 ms
+[2023-04-17 09:57:45,759] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-04-17 09:57:45,891] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-04-17 09:57:46,663] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2023-04-17 09:57:47,409] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@261bc0d6
+[2023-04-17 09:57:47,413] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-04-17 09:57:47,559] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [restartedMain] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-04-17 09:57:49,805] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-04-17 09:57:49,828] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-04-17 09:57:51,309] [org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration] [restartedMain] [231] [WARN ] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2023-04-17 09:57:51,869] [org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver] [restartedMain] [58] [INFO ] Exposing 1 endpoint(s) beneath base path '/actuator'
+[2023-04-17 09:57:51,993] [org.springframework.security.web.DefaultSecurityFilterChain] [restartedMain] [54] [INFO ] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@72aa756e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64d58049, org.springframework.security.web.context.SecurityContextHolderFilter@41813adc, org.springframework.security.web.header.HeaderWriterFilter@31fcf62f, org.springframework.security.web.authentication.logout.LogoutFilter@7010b6bc, edu.in.mckvie.CampusNexus.security.JwtAuthenticationFilter@6effc015, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c775f0f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b54a445, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4007d25c, org.springframework.security.web.session.SessionManagementFilter@47c91495, org.springframework.security.web.access.ExceptionTranslationFilter@616919a9, org.springframework.security.web.access.intercept.AuthorizationFilter@42fa8270]
+[2023-04-17 09:57:52,571] [org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer] [restartedMain] [59] [INFO ] LiveReload server is running on port 35729
+[2023-04-17 09:57:52,726] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [220] [INFO ] Tomcat started on port(s): 5001 (http) with context path ''
+[2023-04-17 09:57:52,754] [org.springframework.boot.StartupInfoLogger] [restartedMain] [57] [INFO ] Started CampusNexusApplication in 13.928 seconds (process running for 15.54)
+[2023-04-17 10:00:17,594] [org.apache.juli.logging.DirectJDKLog] [http-nio-5001-exec-2] [173] [INFO ] Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-04-17 10:00:17,595] [org.springframework.web.servlet.FrameworkServlet] [http-nio-5001-exec-2] [532] [INFO ] Initializing Servlet 'dispatcherServlet'
+[2023-04-17 10:00:17,601] [org.springframework.web.servlet.FrameworkServlet] [http-nio-5001-exec-2] [554] [INFO ] Completed initialization in 4 ms
+[2023-04-17 10:01:39,322] [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] [http-nio-5001-exec-7] [133] [WARN ] SQL Error: 1062, SQLState: 23000
+[2023-04-17 10:01:39,323] [org.hibernate.engine.jdbc.spi.SqlExceptionHelper] [http-nio-5001-exec-7] [138] [ERROR] Duplicate entry '12344567899' for key 'user.UK_9gexih0nsi6i0yd0m6e619i9s'
+[2023-04-17 10:01:39,347] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-7] [207] [WARN ] Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [user.UK_9gexih0nsi6i0yd0m6e619i9s]]
+[2023-04-17 10:11:44,798] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-5] [33] [INFO ] amount= 50 
+[2023-04-17 10:11:44,801] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-5] [34] [INFO ] amount= 12344567893 
+[2023-04-17 10:11:45,874] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-5] [56] [INFO ] order: {"amount":5000,"amount_paid":0,"notes":[],"created_at":1681706505,"amount_due":5000,"currency":"INR","receipt":"txn_235425_11","id":"order_LejLK2NS77cXmq","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 10:11:45,877] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-5] [57] [INFO ] order: PaymentDetails(id=502, orderId=order_LejLK2NS77cXmq, amount=5000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=1, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 10:11:45 IST 2023)
+[2023-04-17 10:16:40,926] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-10] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: 11600221064]
+[2023-04-17 10:17:04,953] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-2] [207] [WARN ] Resolved [ResourceNotFoundException(resourceName=user not found, fieldName=email, fieldValue=aniketbera.ab@gmail.com)]
+[2023-04-17 10:18:55,650] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-4] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: aniket.ab@gmail.com]
+[2023-04-17 10:22:27,927] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-2] [33] [INFO ] amount= 2000 
+[2023-04-17 10:22:27,929] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-2] [34] [INFO ] amount= 12744567899 
+[2023-04-17 10:22:28,731] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-2] [56] [INFO ] order: {"amount":200000,"amount_paid":0,"notes":[],"created_at":1681707148,"amount_due":200000,"currency":"INR","receipt":"txn_235425_11","id":"order_LejWdjf6UR0Eml","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 10:22:28,732] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-2] [57] [INFO ] order: PaymentDetails(id=503, orderId=order_LejWdjf6UR0Eml, amount=200000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=202, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 10:22:28 IST 2023)
+[2023-04-17 10:40:05,465] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-9] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: 11600221064]
+[2023-04-17 10:40:44,079] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-2] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: 11600221064]
+[2023-04-17 10:44:54,491] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-6] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: 11600221064]
+[2023-04-17 10:47:33,711] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-10] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: 11600221064]
+[2023-04-17 10:48:18,414] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-3] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: 11600221064]
+[2023-04-17 10:50:50,488] [org.apache.juli.logging.DirectJDKLog] [http-nio-5001-exec-3] [175] [ERROR] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NumberFormatException: For input string: ".100"] with root cause
+java.lang.NumberFormatException: For input string: ".100"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:654)
+	at java.base/java.lang.Integer.parseInt(Integer.java:786)
+	at edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl.createOrder(PaymentServiceImpl.java:31)
+	at edu.in.mckvie.CampusNexus.controllers.PaymentController.createOrder(PaymentController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:399)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:297)
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:79)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:125)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at edu.in.mckvie.CampusNexus.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:69)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:173)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:186)
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:280)
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:170)
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:134)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:109)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2023-04-17 10:56:09,799] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-5] [207] [WARN ] Resolved [org.springframework.security.authentication.InternalAuthenticationServiceException: User not found with university roll number: xbbxjxjjxjxjjx]
+[2023-04-17 10:56:36,458] [org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver] [http-nio-5001-exec-7] [207] [WARN ] Resolved [edu.in.mckvie.CampusNexus.exceptions.AuthException: Invalid Username And Password !!]
+[2023-04-17 10:56:52,379] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-10] [33] [INFO ] amount= 1000 
+[2023-04-17 10:56:52,381] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-10] [34] [INFO ] amount= 12344567893 
+[2023-04-17 10:56:56,155] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-10] [56] [INFO ] order: {"amount":100000,"amount_paid":0,"notes":[],"created_at":1681709215,"amount_due":100000,"currency":"INR","receipt":"txn_235425_11","id":"order_Lek72Pn1Hj7ThC","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 10:56:56,157] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-10] [57] [INFO ] order: PaymentDetails(id=504, orderId=order_Lek72Pn1Hj7ThC, amount=100000, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=1, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 10:56:56 IST 2023)
+[2023-04-17 10:57:02,972] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-3] [33] [INFO ] amount= 5 
+[2023-04-17 10:57:02,977] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-3] [34] [INFO ] amount= 12344567893 
+[2023-04-17 10:57:03,458] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-3] [56] [INFO ] order: {"amount":500,"amount_paid":0,"notes":[],"created_at":1681709223,"amount_due":500,"currency":"INR","receipt":"txn_235425_11","id":"order_Lek7ANySYBDGov","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 10:57:03,458] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-3] [57] [INFO ] order: PaymentDetails(id=505, orderId=order_Lek7ANySYBDGov, amount=500, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=1, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 10:57:03 IST 2023)
+[2023-04-17 10:58:22,501] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-8] [33] [INFO ] amount= 1 
+[2023-04-17 10:58:22,507] [edu.in.mckvie.CampusNexus.services.servicesimpl.PaymentServiceImpl] [http-nio-5001-exec-8] [34] [INFO ] amount= 12344567893 
+[2023-04-17 10:58:23,275] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-8] [56] [INFO ] order: {"amount":100,"amount_paid":0,"notes":[],"created_at":1681709302,"amount_due":100,"currency":"INR","receipt":"txn_235425_11","id":"order_Lek8ZHlRK1AMLC","entity":"order","offer_id":null,"status":"created","attempts":0}
+[2023-04-17 10:58:23,277] [edu.in.mckvie.CampusNexus.utils.PaymentHandler] [http-nio-5001-exec-8] [57] [INFO ] order: PaymentDetails(id=506, orderId=order_Lek8ZHlRK1AMLC, amount=100, receipt=txn_235425_11, status=created, paymentId=null, currency=INR, user=User(id=1, name=null, email=null, password=null, universityRollNumber=null, contactNumber=null, dob=null, roles=[], created_on=null), created_on=Mon Apr 17 10:58:23 IST 2023)
+[2023-04-17 14:01:25,097] [com.zaxxer.hikari.pool.HikariPool$HouseKeeper] [HikariPool-1 housekeeper] [804] [WARN ] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m34s80ms654µs200ns).
+[2023-04-17 14:45:05,364] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-04-17 14:45:05,426] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-04-17 14:45:05,439] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
