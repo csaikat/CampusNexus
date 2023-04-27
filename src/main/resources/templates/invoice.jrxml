@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="825ca0e0-bcbe-4ecc-9f4a-9b03c82bf25d">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <subDataset name="Dataset1" uuid="cef2921b-216d-4d63-a93b-7edf9fac3d74">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+    </subDataset>
+    <parameter name="session" class="java.lang.String"/>
+    <parameter name="paymentDate" class="java.lang.String"/>
+    <parameter name="paymentFor" class="java.lang.String"/>
+    <parameter name="class" class="java.lang.String"/>
+    <parameter name="razerPayRefNo" class="java.lang.String"/>
+    <parameter name="latePayCharge" class="java.lang.Double">
+        <defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="otherCharge" class="java.lang.Double">
+        <defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="remainingAmount" class="java.lang.Double">
+        <defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="feeDescription" class="java.lang.String"/>
+    <parameter name="modeOfPay" class="java.lang.String"/>
+    <parameter name="course" class="java.lang.String"/>
+    <parameter name="regNo" class="java.lang.String"/>
+    <parameter name="amount" class="java.lang.Double">
+        <defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="discountAmount" class="java.lang.Double">
+        <defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="paid" class="java.lang.Double">
+        <defaultValueExpression><![CDATA[0.0]]></defaultValueExpression>
+    </parameter>
+    <parameter name="paidAmount" class="java.lang.Double"/>
+    <parameter name="currency" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="179" splitType="Stretch">
+            <frame>
+                <reportElement x="0" y="0" width="550" height="170" uuid="408b2e9f-369f-4d98-830f-579356564039"/>
+                <image>
+                    <reportElement x="220" y="10" width="100" height="70" uuid="a6bf3b54-9f21-49c0-97a1-a136168ff083"/>
+                    <imageExpression><![CDATA["https://upload.wikimedia.org/wikipedia/commons/5/55/Mckvie_logo1.jpg"]]></imageExpression>
+                </image>
+                <image>
+                    <reportElement x="460" y="30" width="50" height="50" uuid="fe1c14f9-72df-454b-b38b-7515d5f363fe"/>
+                    <imageExpression><![CDATA["C:/Users/monis/Desktop/download.png"]]></imageExpression>
+                </image>
+                <staticText>
+                    <reportElement x="100" y="90" width="360" height="50" uuid="92f70bc3-0776-428f-b4bc-4e0bef5dd750"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="SansSerif" size="24" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[MCKV Institute of Engineering]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="190" y="140" width="180" height="30" uuid="8b657739-5b39-4a95-828d-b1039f924d3c"/>
+                    <textElement textAlignment="Center" verticalAlignment="Top">
+                        <font fontName="SansSerif" size="14" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Liluah, Howrah – 711204]]></text>
+                </staticText>
+                <image>
+                    <reportElement x="25" y="45" width="120" height="40" uuid="fe8ad1fb-c612-4614-aa52-c269eb20ccb2"/>
+                    <imageExpression><![CDATA["C:/Users/monis/Desktop/Razorpay_logo.svg.png"]]></imageExpression>
+                </image>
+            </frame>
+        </band>
+    </title>
+    <detail>
+        <band height="321" splitType="Stretch">
+            <frame>
+                <reportElement x="0" y="9" width="550" height="190" uuid="5eaa853e-35e0-450f-a574-14d2f9c37c8f"/>
+                <box>
+                    <pen lineWidth="2.0"/>
+                    <topPen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="2.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <textField>
+                    <reportElement x="40" y="14" width="160" height="21" uuid="8e178290-7d78-4ce5-bcb0-078e18393f62"/>
+                    <textFieldExpression><![CDATA["Academic Year : " +$P{session}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="36" width="170" height="21" uuid="09368d0b-c39f-4b20-a2fa-12b074cc7bdd"/>
+                    <textFieldExpression><![CDATA["Payment Date : "+$P{paymentDate}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="58" width="260" height="21" uuid="426303e0-cd0e-4cc5-a0d8-c32b91f2c32d"/>
+                    <textFieldExpression><![CDATA["Payment For : "+$P{paymentFor}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="80" width="100" height="21" uuid="5a4668d1-e1bd-4490-9372-38502714277f"/>
+                    <textFieldExpression><![CDATA["Class : "+$P{class}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="102" width="240" height="21" uuid="1c4eb011-0cd6-4097-9217-b64f53bef812"/>
+                    <textFieldExpression><![CDATA["Late Payment Charges : "+$P{currency}+" "+$P{latePayCharge}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="124" width="180" height="21" uuid="10885117-df15-43a5-b4e6-427348e56e27"/>
+                    <textFieldExpression><![CDATA["Other Charges : "+$P{currency}+" "+$P{otherCharge}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="146" width="240" height="21" uuid="15b6ff73-bfed-4f8e-8fa7-b13c24594458"/>
+                    <textFieldExpression><![CDATA["Razerpay Refernce Number : "+$P{razerPayRefNo}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="40" y="168" width="220" height="21" uuid="4922ee2f-d3e1-4807-b366-a4f5800a3f8a"/>
+                    <textFieldExpression><![CDATA["Remaining Amount : "+$P{currency}+" "+$P{remainingAmount}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="14" width="190" height="21" uuid="726af236-474f-4a1e-b277-39b4dd8ebce3"/>
+                    <textFieldExpression><![CDATA["Fee Description : " +$P{feeDescription}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="36" width="190" height="21" uuid="8cd42dee-70e0-46fb-8660-485b6c8ea6dd"/>
+                    <textFieldExpression><![CDATA["Mode Of Payment : "+$P{modeOfPay}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="58" width="110" height="21" uuid="7b528003-bd3f-4978-a384-9fc314c82187"/>
+                    <textFieldExpression><![CDATA["Course : "+$P{course}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="80" width="190" height="21" uuid="225fb062-3537-4f0f-95b8-2815e44e6035"/>
+                    <box>
+                        <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                        <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                        <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                        <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <textFieldExpression><![CDATA["Student Registration Code : "+$P{regNo}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="102" width="230" height="21" uuid="debd0aae-7dd1-4f6e-a85d-af1ecbe5d536"/>
+                    <textFieldExpression><![CDATA["Fee Amount : "+$P{currency}+" "+($P{paidAmount}+$P{latePayCharge}+$P{otherCharge})]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="124" width="200" height="21" uuid="ca5247c1-d601-498d-a973-394f5baa1c56"/>
+                    <textFieldExpression><![CDATA["Discount Amount : "+$P{currency}+" "+$P{discountAmount}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="310" y="146" width="230" height="21" uuid="967f3bcc-d110-4718-8677-a3478d5a8d93"/>
+                    <textFieldExpression><![CDATA["Paid Amount : "+$P{currency}+" "+(($P{paidAmount}+$P{latePayCharge}+$P{otherCharge})-$P{discountAmount})]]></textFieldExpression>
+                </textField>
+            </frame>
+            <frame>
+                <reportElement x="0" y="199" width="550" height="111" uuid="ce621138-4fc6-462e-a2cf-bc30d75697c2"/>
+                <box>
+                    <pen lineWidth="1.0"/>
+                    <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <frame>
+                    <reportElement x="0" y="1" width="310" height="52" uuid="9872c89f-fcc5-47f0-a90d-5d877eb63f2e"/>
+                    <box>
+                        <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <staticText>
+                        <reportElement x="117" y="11" width="84" height="30" uuid="ac4bd7a3-06e7-4b96-bbc7-b4dd11e8270c"/>
+                        <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font size="14" isBold="true"/>
+                        </textElement>
+                        <text><![CDATA[Description]]></text>
+                    </staticText>
+                </frame>
+                <frame>
+                    <reportElement x="310" y="53" width="240" height="59" uuid="182b5635-7a44-4c58-a924-8b0210e39ca7"/>
+                    <box>
+                        <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <frame>
+                        <reportElement x="0" y="0" width="120" height="58" uuid="79bd5078-1620-434f-8c15-5890554c5cf0"/>
+                        <box>
+                            <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                            <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                            <rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        </box>
+                    </frame>
+                    <textField>
+                        <reportElement x="11" y="16" width="100" height="30" uuid="37ad3248-38a5-4835-b60d-58601bdfbb8f"/>
+                        <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font size="14"/>
+                        </textElement>
+                        <textFieldExpression><![CDATA[$P{paidAmount}]]></textFieldExpression>
+                    </textField>
+                    <textField>
+                        <reportElement x="130" y="12" width="100" height="30" uuid="fda5389a-c486-4209-8a6b-4254affc73c1"/>
+                        <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font size="14"/>
+                        </textElement>
+                        <textFieldExpression><![CDATA[$P{paid}]]></textFieldExpression>
+                    </textField>
+                </frame>
+                <staticText>
+                    <reportElement x="117" y="68" width="84" height="30" uuid="fc76822b-6f55-4028-843c-685df5fb9291"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font size="14" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Tution Fee]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="321" y="13" width="100" height="30" uuid="7be6e180-35a7-4931-8b83-7f81528b57e8"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font size="14" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Amount]]></text>
+                </staticText>
+                <frame>
+                    <reportElement x="430" y="-1" width="120" height="53" uuid="f09d0921-6756-4104-a6f0-dc924852ca2b"/>
+                    <box>
+                        <topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                        <leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                        <bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                        <rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    </box>
+                    <staticText>
+                        <reportElement x="11" y="12" width="100" height="30" uuid="a899317d-665d-4919-b5d1-67b59f8fc64a"/>
+                        <textElement textAlignment="Center" verticalAlignment="Middle">
+                            <font size="14"/>
+                        </textElement>
+                        <text><![CDATA[Paid]]></text>
+                    </staticText>
+                </frame>
+            </frame>
+        </band>
+    </detail>
+    <summary>
+        <band height="77" splitType="Stretch">
+            <frame>
+                <reportElement x="0" y="15" width="550" height="45" uuid="4684a3f9-9114-42c0-866e-347e75d211fe"/>
+                <box>
+                    <topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    <leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                    <bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+                    <rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+                </box>
+                <staticText>
+                    <reportElement x="50" y="9" width="184" height="30" uuid="e57019b8-73cf-4707-9ceb-8982778a7f34"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font size="14" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Thanks for your payment.]]></text>
+                </staticText>
+            </frame>
+        </band>
+    </summary>
+</jasperReport>

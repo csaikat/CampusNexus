@@ -1,15 +1,17 @@
 package edu.in.mckvie.CampusNexus.entities;
 
-import edu.in.mckvie.CampusNexus.payloads.UserDto;
 import jakarta.persistence.*;
-import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
-@Table(name="orders")
+@Table(name="fees_orders")
 public class PaymentDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,6 +25,11 @@ public class PaymentDetails {
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
-   @Temporal(TemporalType.TIMESTAMP)
+//    @OneToOne(mappedBy = "paymentDetails")
+//    private StudentPayment studentPayment;
+    @Transient
+    private String universityRollNumber;
+    private int semId;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date created_on;
 }

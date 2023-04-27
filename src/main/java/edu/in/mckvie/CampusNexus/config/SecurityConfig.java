@@ -35,7 +35,8 @@ public class SecurityConfig {
     @Autowired
     JwtAuthenticationFilter jwtAuthenticationFilter;
     public static final String [] PUBLIC_URL={
-            "/api/v1/auth/**","/pdf/**","/excel/**","/api/v1/user/**"
+            "/api/v1/auth/**","/pdf/**","/excel/**","/api/v1/user/**","/api/v1/permanent/**",
+            "/api/v1/mail/**"
     };
     @Bean
     public PasswordEncoder passwordEncoder() {

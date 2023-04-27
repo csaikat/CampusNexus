@@ -17,7 +17,9 @@ public class PaymentDetailsDTO {
     private String paymentId;
     @NotEmpty(message = "must have currency")
     private String currency;
-    private UserDto userDto;
+//    private UserDto userDto;
     private String universityRollNumber;
+    private int semId;
+    private String pdfUri;
     private Date created_on;
 }

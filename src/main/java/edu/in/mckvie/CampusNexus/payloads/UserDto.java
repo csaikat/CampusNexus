@@ -2,6 +2,7 @@ package edu.in.mckvie.CampusNexus.payloads;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import edu.in.mckvie.CampusNexus.entities.Department;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -24,6 +25,7 @@ public class UserDto {
     @NotNull(message = "D.O.B must not be Null")
     private Date dob;
     private String password;
+    private Department department;
     private Set<RoleDTO> roles=new HashSet<>();
     private Date created_on;
     @JsonProperty

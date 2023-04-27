@@ -1,17 +1,23 @@
 package edu.in.mckvie.CampusNexus.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.boot.sql.init.dependency.DependsOnDatabaseInitialization;
 
 import java.util.Date;
-
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Data
+@Table(name = "role")
 public class Role {
     @Id
     private int id;
+    @Column(name="role",nullable = false)
     private String name;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)

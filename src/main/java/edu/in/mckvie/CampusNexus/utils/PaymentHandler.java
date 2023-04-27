@@ -28,7 +28,7 @@ public class PaymentHandler {
     @Autowired
     UserRepository userRepository;
     Logger logger= LoggerFactory.getLogger(PaymentController.class);
-    public PaymentDetails createOrder(int amount,String uRoll) throws RazorpayException {
+    public PaymentDetails createOrder(int amount,String uRoll,int semId) throws RazorpayException {
         RazorpayClient razorpay = new RazorpayClient(this.key_id,this.key_secret);
         //create new order
         Order order=null;
@@ -51,6 +51,7 @@ public class PaymentHandler {
             User u=new User();
             u.setId(userRepository.findByUniversityRollNumber(uRoll).get().getId());
             paymentDetails.setUser(u);
+            paymentDetails.setSemId(semId);
             paymentRepository.save(paymentDetails);
 
             logger.info("order: {}",order);

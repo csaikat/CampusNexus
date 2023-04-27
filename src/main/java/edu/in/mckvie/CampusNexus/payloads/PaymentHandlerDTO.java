@@ -11,5 +11,9 @@ public class PaymentHandlerDTO {
     private String razorpayOrderId;
     private String razorpaySignature;
     private String status;
-    private UserDto userDto;
+//    private UserDto userDto;
+    private String universityRollNumber;
+    private int semId;
+    private double amount;
+    private Long payment_id;
 }

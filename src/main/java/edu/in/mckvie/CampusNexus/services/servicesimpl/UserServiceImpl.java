@@ -1,11 +1,13 @@
 package edu.in.mckvie.CampusNexus.services.servicesimpl;
 
 import edu.in.mckvie.CampusNexus.config.AppConstants;
+import edu.in.mckvie.CampusNexus.entities.DefaulterList;
 import edu.in.mckvie.CampusNexus.entities.Role;
 import edu.in.mckvie.CampusNexus.entities.User;
 import edu.in.mckvie.CampusNexus.exceptions.ResourceNotFoundException;
 import edu.in.mckvie.CampusNexus.payloads.MailDTO;
 import edu.in.mckvie.CampusNexus.payloads.UserDto;
+import edu.in.mckvie.CampusNexus.repositories.DefaulterListRepository;
 import edu.in.mckvie.CampusNexus.repositories.RoleRepository;
 import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import edu.in.mckvie.CampusNexus.services.MailService;
@@ -30,11 +32,14 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
     @Autowired
     private MailService mailService;
+    @Autowired
+    private DefaulterListRepository defaulterListRepository;
 
     @Override
     public UserDto register(UserDto userDto) {
-
+        System.out.println(userDto);
         User user = this.modelMapper.map(userDto, User.class);
+        System.out.println(user);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(AppConstants.PASSWORD_PATTERN);
         String date = simpleDateFormat.format(user.getDob());
         user.setPassword(passwordEncoder.encode(date));
@@ -42,6 +47,11 @@ public class UserServiceImpl implements UserService {
         Role role = this.roleRepository.findById(AppConstants.STUDENT_USER).get();
         user.getRoles().add(role);
         User newUser = this.userRepository.save(user);
+        //add in defulter list also
+        DefaulterList defaulterList=new DefaulterList();
+        defaulterList.setUser(newUser);
+        this.defaulterListRepository.save(defaulterList);
+
         return this.modelMapper.map(newUser, UserDto.class);
     }
 
