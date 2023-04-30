@@ -34,8 +34,10 @@ public class SecurityConfig {
     JwtAuthenticationEntryPoint jwtAuthenticationEntryPoint;
     @Autowired
     JwtAuthenticationFilter jwtAuthenticationFilter;
+
+
     public static final String [] PUBLIC_URL={
-            "/api/v1/auth/**","/pdf/**","/excel/**","/api/v1/user/**","/api/v1/permanent/**",
+            "/api/v1/auth/authenticate/**","/pdf/**","/excel/**","/api/v1/user/**","/api/v1/permanent/**",
             "/api/v1/mail/**"
     };
     @Bean
@@ -64,12 +66,18 @@ public class SecurityConfig {
                 .and()
                 .exceptionHandling().authenticationEntryPoint(this.jwtAuthenticationEntryPoint)
                 .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authenticationProvider(authenticationProvider())
                 .addFilterBefore
-                        (this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class).build();
+                        (this.jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .build();
     }
+//    @Bean
+//    public HttpSessionEventPublisher httpSessionEventPublisher() {
+//        return new HttpSessionEventPublisher();
+//    }
     @Bean
     public AuthenticationManager authenticationManagerBean(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();

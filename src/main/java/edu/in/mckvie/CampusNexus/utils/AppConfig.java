@@ -20,4 +20,12 @@ public class AppConfig implements WebMvcConfigurer {
 //        converters.add(decryptionConverter);
 //    }
 
+    //    @Autowired
+//    private ConcurrentLoginInterceptor concurrentLoginInterceptor;
+//
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(concurrentLoginInterceptor);
+//    }
+
 }

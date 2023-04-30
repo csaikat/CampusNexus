@@ -1,8 +1,9 @@
 package edu.in.mckvie.CampusNexus;
 
 
-import edu.in.mckvie.CampusNexus.config.*;
-import edu.in.mckvie.CampusNexus.entities.*;
+import edu.in.mckvie.CampusNexus.config.AppConstants;
+import edu.in.mckvie.CampusNexus.config.RoleConstants;
+import edu.in.mckvie.CampusNexus.entities.Role;
 import edu.in.mckvie.CampusNexus.repositories.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,34 @@ public class CampusNexusApplication implements CommandLineRunner {
 	public ModelMapper modelMapper(){
 		return new ModelMapper();
 	}
+
+//	@Value("${spring.redis.host}") String redisHost;
+//	@Value("${spring.redis.port}") int redisPort;
+//	@Bean
+//	public JedisConnectionFactory jedisConnectionFactory() {
+//		RedisStandaloneConfiguration redisConfig = new RedisStandaloneConfiguration();
+//		redisConfig.setHostName(redisHost);
+//		redisConfig.setPort(redisPort);
+//		JedisConnectionFactory jedisConnectionFactory = new JedisConnectionFactory(redisConfig);
+//		return jedisConnectionFactory;
+//	}
+
+//	@Bean
+//	public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+//		return new StringRedisTemplate(redisConnectionFactory);
+//	}
+//@Bean
+//public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+//	RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
+//	redisTemplate.setConnectionFactory(connectionFactory);
+//	redisTemplate.setDefaultSerializer(new StringRedisSerializer());
+//	redisTemplate.setKeySerializer(new StringRedisSerializer());
+//	redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(Object.class));
+//	redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+//	redisTemplate.setHashValueSerializer(new Jackson2JsonRedisSerializer<>(Object.class));
+//	redisTemplate.afterPropertiesSet();
+//	return redisTemplate;
+//}
 
 	@Override
 	public void run(String... args) throws Exception {

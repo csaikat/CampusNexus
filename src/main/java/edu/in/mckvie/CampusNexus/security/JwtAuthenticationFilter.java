@@ -1,5 +1,6 @@
 package edu.in.mckvie.CampusNexus.security;
 
+import edu.in.mckvie.CampusNexus.services.JwtBlacklistService;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import jakarta.servlet.FilterChain;
@@ -22,6 +23,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private UserDetailsService userDetailsService;
     @Autowired
     private JwtTokenHelper jwtTokenHelper;
+    @Autowired
+    private JwtBlacklistService jwtBlacklistService;
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
                                     FilterChain filterChain)

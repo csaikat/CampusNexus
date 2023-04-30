@@ -56,18 +56,21 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     public String generateInvoice(int userId,int semId) throws FileNotFoundException, JRException, ParseException {
         //fetch payment details
+
         StudentPayment studentPayment=this.studentPaymentRepository.findByUserIdAndSemId(userId,semId);
         System.out.println("payment-details: "+studentPayment);
         DateFormat formatter = new SimpleDateFormat("MM-yy");
         Date today = new Date();
         Date d = formatter.parse(formatter.format(today));
 
+        System.out.println("year:"+studentPayment.getSemester().getYear().getName());
+        String year=studentPayment.getSemester().getYear().getName();
         JasperReport compileReport=JasperCompileManager.compileReport(new FileInputStream("src/main/resources/templates/invoice.jrxml"));
         HashMap<String,Object> map = new HashMap<>();
         map.put("session","04/2021 - 03/2022");
         map.put("paymentDate",new Date().toString());
         map.put("paymentFor",studentPayment.getPaymentDetails().getUser().getName());
-        map.put("class",studentPayment.getSemester().getYear().getName());
+        map.put("class",year);
         map.put("latePayCharge",0.00);
         map.put("otherCharge",0.00);
         map.put("razerPayRefNo",studentPayment.getPaymentDetails().getPaymentId());

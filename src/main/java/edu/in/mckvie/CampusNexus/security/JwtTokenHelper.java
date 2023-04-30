@@ -7,13 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
-
-import static io.jsonwebtoken.impl.TextCodec.BASE64;
 
 @Component
 public class JwtTokenHelper {
@@ -71,6 +68,8 @@ public class JwtTokenHelper {
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
     }
+
+
 //    private Key getSignKey(){
 //        byte[] keyBytes= BASE64.decode(SECRET);
 //        Keys
