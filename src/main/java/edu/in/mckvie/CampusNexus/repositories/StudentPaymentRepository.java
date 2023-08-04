@@ -13,4 +13,9 @@ public interface StudentPaymentRepository extends JpaRepository<StudentPayment,I
     public List<StudentPayment> getDuePaymentDetails(@Param("semId") int semId);
     @Query("from StudentPayment where paymentDetails.user.id=:userId and semester.id=:semId")
     public StudentPayment findByUserIdAndSemId(@Param("userId")int userId, @Param("semId")int semId);
+    /*select amount,currency,payment_id,status,s.sem from payment_list pl inner join fees_orders fo on pl.payment_details_id=fo.id
+    inner join sem s on s.id=pl.semester_id
+    where  fo.user_id=4;*/
+    @Query("from StudentPayment WHERE paymentDetails.user.id=:id")
+    public List<StudentPayment> findPaymentDetailsByUserId(@Param("id")int id);
 }

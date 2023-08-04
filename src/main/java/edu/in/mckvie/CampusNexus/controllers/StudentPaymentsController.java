@@ -28,4 +28,9 @@ public class StudentPaymentsController {
     public List<StudentPayment> getDuePayments(@PathVariable("semId") int semId){
         return this.studentPaymentsService.getDuePayments(semId);
     }
+
+    @GetMapping("/student-payment-record/{userId}")
+    public List<StudentPaymentsDTO> getStudentPaymentRecords(@PathVariable("userId")  String userId){
+        return this.studentPaymentsService.getStudentPaymentsRecords(userId);
+    }
 }

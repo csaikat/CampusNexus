@@ -3,6 +3,7 @@ package edu.in.mckvie.CampusNexus.services.servicesimpl;
 import edu.in.mckvie.CampusNexus.entities.StudentPayment;
 import edu.in.mckvie.CampusNexus.payloads.StudentPaymentsDTO;
 import edu.in.mckvie.CampusNexus.repositories.StudentPaymentRepository;
+import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import edu.in.mckvie.CampusNexus.services.StudentPaymentsService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public class StudentPaymentsServiceImpl implements StudentPaymentsService {
     private StudentPaymentRepository studentPaymentRepository;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private UserRepository userRepository;
     @Override
     public List<StudentPaymentsDTO> getAllStudentPaymentsRecords() {
         List<StudentPayment> studentPaymentsList=this.studentPaymentRepository.findAll();
@@ -33,4 +36,17 @@ public class StudentPaymentsServiceImpl implements StudentPaymentsService {
         return this.modelMapper.map(this.studentPaymentRepository
                 .findByUserIdAndSemId(userId,semId),StudentPaymentsDTO.class);
     }
+
+    @Override
+    public List<StudentPaymentsDTO> getStudentPaymentsRecords(String id) {
+        int userId=this.userRepository.findByUniversityRollNumber(id).get().getId();
+        System.out.println("userId:"+userId);
+        List<StudentPayment> studentPaymentsList=this.studentPaymentRepository.findPaymentDetailsByUserId(userId);
+        return studentPaymentsList.stream()
+                .map((s)->this.modelMapper.map(s, StudentPaymentsDTO.class))
+                .collect(Collectors.toList());
+    }
+
+
 }
+

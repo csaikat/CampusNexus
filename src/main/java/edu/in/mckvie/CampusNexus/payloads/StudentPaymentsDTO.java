@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentPaymentsDTO {
+    private Integer id;
     private double dueFees;
     private PaymentDetails paymentDetails;
     private Semester semester;
