@@ -1,9 +1,8 @@
 package edu.in.mckvie.CampusNexus;
 
 
-import edu.in.mckvie.CampusNexus.config.AppConstants;
-import edu.in.mckvie.CampusNexus.config.RoleConstants;
-import edu.in.mckvie.CampusNexus.entities.Role;
+import edu.in.mckvie.CampusNexus.config.*;
+import edu.in.mckvie.CampusNexus.entities.*;
 import edu.in.mckvie.CampusNexus.repositories.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,7 +84,7 @@ public class CampusNexusApplication implements CommandLineRunner {
 //		this.userRepository.save(u);
 //		System.out.println(userRepository.findByUniversityRollNumber("111"));
 //
-		//System.out.println(String.valueOf(RoleConstants.ROLE_ADMIN));
+//		System.out.println(String.valueOf(RoleConstants.ROLE_ADMIN));
 		try{
 			//add default roles
 			Role role1=new Role();
@@ -99,7 +98,7 @@ public class CampusNexusApplication implements CommandLineRunner {
 			role3.setName(String.valueOf(RoleConstants.ROLE_TEACHER));
 			List<Role> roles=this.roleRepository.saveAll(List.of(role1,role2,role3));
 			roles.forEach(r-> System.out.println(r.getName()));
-/*
+
 			//add default department
 			Department dept1=new Department();
 			dept1.setDeptName(String.valueOf(DepartmentConstants.CSE));
@@ -189,7 +188,6 @@ public class CampusNexusApplication implements CommandLineRunner {
 			List<Semester> sems=this.semesterRepositories.saveAll(List.of(sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8));
 			sems.forEach(s-> System.out.println(s.getName()));
 
-*/
 
 
 		}catch (Exception e) {
