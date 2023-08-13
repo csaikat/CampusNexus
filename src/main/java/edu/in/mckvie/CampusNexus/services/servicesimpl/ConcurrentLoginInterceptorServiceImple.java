@@ -15,12 +15,20 @@ public class ConcurrentLoginInterceptorServiceImple implements ConcurrentLoginIn
     @Value("${jwt.secret}")
     private String secret;
 
+//    public ConcurrentLoginInterceptorServiceImple(@Value("${spring.redis.host}") String host,
+//                                                  @Value("${spring.redis.port}") int port) {
+//        jedis = new Jedis(host, port);
+//        System.out.println("Server is running: "+jedis.ping());
+//    }
+
     public ConcurrentLoginInterceptorServiceImple(@Value("${spring.redis.host}") String host,
-                                                  @Value("${spring.redis.port}") int port) {
+                                                  @Value("${spring.redis.port}") int port,@Value("${spring.redis.password}")String password) {
         jedis = new Jedis(host, port);
+        System.out.println(password.isBlank());
+        if(!password.isBlank())
+            jedis.auth(password);
         System.out.println("Server is running: "+jedis.ping());
     }
-
     public void blacklistToken(String key) {
         long ttl = Jwts.parser().setSigningKey(secret).parseClaimsJws(getData(key)).getBody().getExpiration().getTime()
                 - System.currentTimeMillis();
