@@ -1,4 +1,123 @@
-[2023-08-14 00:23:21,531] [com.zaxxer.hikari.pool.HikariPool$HouseKeeper] [HikariPool-1 housekeeper] [804] [WARN ] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=59m50s383ms248µs100ns).
-[2023-08-14 00:23:36,102] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
-[2023-08-14 00:23:36,178] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
-[2023-08-14 00:23:36,196] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-08-14 12:23:06,629] [org.springframework.boot.StartupInfoLogger] [restartedMain] [51] [INFO ] Starting CampusNexusApplication using Java 17.0.4 with PID 15888 (C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes started by monis in C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend)
+[2023-08-14 12:23:06,637] [org.springframework.boot.SpringApplication] [restartedMain] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-08-14 12:23:06,761] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2023-08-14 12:23:06,762] [org.springframework.boot.logging.DeferredLog] [restartedMain] [250] [INFO ] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2023-08-14 12:23:09,246] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [291] [INFO ] Multiple Spring Data modules found, entering strict repository configuration mode
+[2023-08-14 12:23:09,251] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-08-14 12:23:09,725] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 453 ms. Found 10 JPA repository interfaces.
+[2023-08-14 12:23:09,760] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [291] [INFO ] Multiple Spring Data modules found, entering strict repository configuration mode
+[2023-08-14 12:23:09,763] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [138] [INFO ] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[2023-08-14 12:23:09,828] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.DefaulterListRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,828] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.DepartmentRepositories; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,829] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.FeesRepositories; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,830] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.PaymentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,831] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.RoleRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,832] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.SemesterRepositories; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,833] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.StudentDetailsRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,834] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.StudentPaymentRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,835] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.UserRepository; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,836] [org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport] [restartedMain] [320] [INFO ] Spring Data Redis - Could not safely identify store assignment for repository candidate interface edu.in.mckvie.CampusNexus.repositories.YearRepositories; If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository
+[2023-08-14 12:23:09,837] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [restartedMain] [208] [INFO ] Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+[2023-08-14 12:23:11,573] [org.springframework.boot.web.embedded.tomcat.TomcatWebServer] [restartedMain] [108] [INFO ] Tomcat initialized with port(s): 5001 (http)
+[2023-08-14 12:23:11,592] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting service [Tomcat]
+[2023-08-14 12:23:11,593] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Starting Servlet engine: [Apache Tomcat/10.1.5]
+[2023-08-14 12:23:11,744] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Initializing Spring embedded WebApplicationContext
+[2023-08-14 12:23:11,746] [org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext] [restartedMain] [291] [INFO ] Root WebApplicationContext: initialization completed in 4981 ms
+[2023-08-14 12:23:12,039] [org.hibernate.jpa.internal.util.LogHelper] [restartedMain] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-08-14 12:23:12,234] [org.hibernate.Version] [restartedMain] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-08-14 12:23:13,008] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [110] [INFO ] HikariPool-1 - Starting...
+[2023-08-14 12:23:13,757] [com.zaxxer.hikari.pool.HikariPool] [restartedMain] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24b4305c
+[2023-08-14 12:23:13,763] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-08-14 12:23:13,990] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [restartedMain] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-08-14 12:23:18,312] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [restartedMain] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-08-14 12:23:18,327] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-08-14 12:23:20,054] [org.springframework.context.support.AbstractApplicationContext] [restartedMain] [592] [WARN ] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'concurrentLoginInterceptorService': Error creating bean with name 'concurrentLoginInterceptorServiceImple' defined in file [C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes\edu\in\mckvie\CampusNexus\services\servicesimpl\ConcurrentLoginInterceptorServiceImple.class]: Failed to instantiate [edu.in.mckvie.CampusNexus.services.servicesimpl.ConcurrentLoginInterceptorServiceImple]: Constructor threw exception
+[2023-08-14 12:23:20,056] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [restartedMain] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-08-14 12:23:20,059] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-08-14 12:23:20,073] [com.zaxxer.hikari.HikariDataSource] [restartedMain] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-08-14 12:23:20,079] [org.apache.juli.logging.DirectJDKLog] [restartedMain] [173] [INFO ] Stopping service [Tomcat]
+[2023-08-14 12:23:20,102] [org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger] [restartedMain] [82] [INFO ] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2023-08-14 12:23:20,138] [org.springframework.boot.SpringApplication] [restartedMain] [822] [ERROR] Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authController': Unsatisfied dependency expressed through field 'concurrentLoginInterceptorService': Error creating bean with name 'concurrentLoginInterceptorServiceImple' defined in file [C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes\edu\in\mckvie\CampusNexus\services\servicesimpl\ConcurrentLoginInterceptorServiceImple.class]: Failed to instantiate [edu.in.mckvie.CampusNexus.services.servicesimpl.ConcurrentLoginInterceptorServiceImple]: Constructor threw exception
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:712)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:692)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1398)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:961)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at edu.in.mckvie.CampusNexus.CampusNexusApplication.main(CampusNexusApplication.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'concurrentLoginInterceptorServiceImple' defined in file [C:\Users\monis\Desktop\CampusNexus\campus-nexus-backend\target\classes\edu\in\mckvie\CampusNexus\services\servicesimpl\ConcurrentLoginInterceptorServiceImple.class]: Failed to instantiate [edu.in.mckvie.CampusNexus.services.servicesimpl.ConcurrentLoginInterceptorServiceImple]: Constructor threw exception
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:324)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:312)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1345)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1189)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:709)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [edu.in.mckvie.CampusNexus.services.servicesimpl.ConcurrentLoginInterceptorServiceImple]: Constructor threw exception
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:223)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:110)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:321)
+	... 38 common frames omitted
+Caused by: redis.clients.jedis.exceptions.JedisConnectionException: Failed to connect to any host resolved for DNS name.
+	at redis.clients.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:63)
+	at redis.clients.jedis.DefaultJedisSocketFactory.createSocket(DefaultJedisSocketFactory.java:87)
+	at redis.clients.jedis.Connection.connect(Connection.java:180)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:152)
+	at redis.clients.jedis.Connection.sendCommand(Connection.java:135)
+	at redis.clients.jedis.Jedis.ping(Jedis.java:355)
+	at edu.in.mckvie.CampusNexus.services.servicesimpl.ConcurrentLoginInterceptorServiceImple.<init>(ConcurrentLoginInterceptorServiceImple.java:30)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:210)
+	... 40 common frames omitted
+	Suppressed: java.net.ConnectException: Connection refused: no further information
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:633)
+		at redis.clients.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:73)
+		... 52 common frames omitted
+	Suppressed: java.net.ConnectException: Connection refused: no further information
+		at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+		at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+		at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
+		at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
+		at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+		at java.base/java.net.Socket.connect(Socket.java:633)
+		at redis.clients.jedis.DefaultJedisSocketFactory.connectToFirstSuccessfulHost(DefaultJedisSocketFactory.java:73)
+		... 52 common frames omitted
