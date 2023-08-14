@@ -22,7 +22,7 @@ public class PaymentDetails {
     private String status;
     private String paymentId;
     private String currency;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     @JoinColumn(name = "user_id")
     private User user;
 //    @OneToOne(mappedBy = "paymentDetails")

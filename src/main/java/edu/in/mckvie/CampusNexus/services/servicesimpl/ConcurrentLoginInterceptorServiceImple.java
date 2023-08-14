@@ -15,12 +15,6 @@ public class ConcurrentLoginInterceptorServiceImple implements ConcurrentLoginIn
     @Value("${jwt.secret}")
     private String secret;
 
-//    public ConcurrentLoginInterceptorServiceImple(@Value("${spring.redis.host}") String host,
-//                                                  @Value("${spring.redis.port}") int port) {
-//        jedis = new Jedis(host, port);
-//        System.out.println("Server is running: "+jedis.ping());
-//    }
-
     public ConcurrentLoginInterceptorServiceImple(@Value("${spring.redis.host}") String host,
                                                   @Value("${spring.redis.port}") int port,@Value("${spring.redis.password}")String password) {
         jedis = new Jedis(host, port);

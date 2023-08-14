@@ -5,10 +5,14 @@ import edu.in.mckvie.CampusNexus.repositories.StudentPaymentRepository;
 import edu.in.mckvie.CampusNexus.services.InvoiceService;
 import net.sf.jasperreports.engine.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,6 +24,8 @@ import java.util.UUID;
 public class InvoiceServiceImpl implements InvoiceService {
     @Autowired
     private StudentPaymentRepository studentPaymentRepository;
+    @Autowired
+    private ResourceLoader resourceLoader;
     @Override
     public byte[] generateAndServeInvoice() throws FileNotFoundException, JRException {
 
@@ -53,8 +59,10 @@ public class InvoiceServiceImpl implements InvoiceService {
 
         return pdfData;
     }
+    @Value("${project.image}")
+    String basePath;
     @Override
-    public String generateInvoice(int userId,int semId) throws FileNotFoundException, JRException, ParseException {
+    public String generateInvoice(int userId,int semId) throws IOException, JRException, ParseException {
         //fetch payment details
 
         StudentPayment studentPayment=this.studentPaymentRepository.findByUserIdAndSemId(userId,semId);
@@ -65,7 +73,10 @@ public class InvoiceServiceImpl implements InvoiceService {
 
         System.out.println("year:"+studentPayment.getSemester().getYear().getName());
         String year=studentPayment.getSemester().getYear().getName();
-        JasperReport compileReport=JasperCompileManager.compileReport(new FileInputStream("src/main/resources/templates/invoice.jrxml"));
+        String path=resourceLoader.getResource("classpath:invoice.jrxml").getURI().getPath();
+//        JasperReport compileReport=JasperCompileManager.compileReport(new FileInputStream("src/main/resources/templates/invoice.jrxml"));
+        System.out.println("path: "+path);
+        JasperReport compileReport=JasperCompileManager.compileReport(path);
         HashMap<String,Object> map = new HashMap<>();
         map.put("session","04/2021 - 03/2022");
         map.put("paymentDate",new Date().toString());
@@ -88,7 +99,15 @@ public class InvoiceServiceImpl implements InvoiceService {
 
         String pdfName="RAZORPAY-PAYMENT-RECEIPT-"+UUID.randomUUID()+".pdf";
         JasperPrint report=JasperFillManager.fillReport(compileReport,map,new JREmptyDataSource());
-        JasperExportManager.exportReportToPdfFile(report,pdfName);
+        File file=new File(basePath);
+
+        if(!file.exists()){
+            file.mkdir();
+        }
+        String upload_path=basePath+pdfName;
+        System.out.println("basepath: "+upload_path);
+        JasperExportManager.exportReportToPdfFile(report, upload_path);
+        System.out.println("exported");
         return pdfName;
     }
 }

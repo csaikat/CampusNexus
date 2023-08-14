@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 
 @RestController
@@ -32,7 +33,7 @@ public class PaymentController {
         return new ResponseEntity<>(createPaymentDetailsDTO, HttpStatus.CREATED);
     }
     @PutMapping("/update-order")
-    public ResponseEntity<PaymentDetailsDTO> updateOrder(@RequestBody PaymentHandlerDTO paymentHandlerDTO) throws JRException, FileNotFoundException, MessagingException, ParseException {
+    public ResponseEntity<PaymentDetailsDTO> updateOrder(@RequestBody PaymentHandlerDTO paymentHandlerDTO) throws JRException, IOException, MessagingException, ParseException {
         PaymentDetailsDTO updatedPaymentDetailsDTO=paymentService.updateOrder(paymentHandlerDTO);
         return ResponseEntity.ok(updatedPaymentDetailsDTO);
     }

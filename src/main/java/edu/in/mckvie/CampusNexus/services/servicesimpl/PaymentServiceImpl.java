@@ -19,9 +19,10 @@ import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.text.ParseException;
 
 @Service
@@ -49,6 +50,8 @@ public class PaymentServiceImpl implements PaymentService {
     private MailService mailService;
     @Autowired
     private InvoiceService invoiceService;
+    @Value("${project.image}")
+    String basePath;
     @Override
     public PaymentDetailsDTO createOrder(PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException {
         PaymentDetails savedPaymentDetails=null;
@@ -78,7 +81,7 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public PaymentDetailsDTO updateOrder(PaymentHandlerDTO paymentHandlerDTO) throws JRException, FileNotFoundException, MessagingException, ParseException {
+    public PaymentDetailsDTO updateOrder(PaymentHandlerDTO paymentHandlerDTO) throws JRException, IOException, MessagingException, ParseException {
         PaymentDetails paymentDetails=null;
         try{
             paymentDetails=this.paymentRepository.findByOrderId(paymentHandlerDTO.getRazorpayOrderId().toString());
@@ -131,7 +134,7 @@ public class PaymentServiceImpl implements PaymentService {
         mailDTO.setTo(userMailId);
         mailDTO.setSubject("Fees Payment");
         mailDTO.setMessage("Your payment is successfull");
-        mailDTO.setAttachment("C:\\Users\\monis\\Desktop\\CampusNexus\\campus-nexus-backend\\"+pdfName);
+        mailDTO.setAttachment(basePath+pdfName);
         this.mailService.sendEmailWithAttachment(mailDTO);
 
         return  this.modelMapper.map(savedpaymentDetails,PaymentDetailsDTO.class);

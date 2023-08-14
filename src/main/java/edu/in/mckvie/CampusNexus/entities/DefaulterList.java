@@ -14,7 +14,7 @@ public class DefaulterList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private User user;
     @Column(columnDefinition = "boolean default 0")
     private boolean SEM1;
