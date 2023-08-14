@@ -16,8 +16,8 @@ public class StudentPayment {
     private Integer id;
     @Column(columnDefinition = "integer default 0")
     private double dueFees;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private PaymentDetails paymentDetails;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Semester semester;
 }

@@ -19,9 +19,9 @@ public class Semester {
     private Integer id;
     @Column(name = "sem",nullable = false)
     private String name;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Fees fees;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Year year;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
