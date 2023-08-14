@@ -9,10 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -76,7 +73,9 @@ public class InvoiceServiceImpl implements InvoiceService {
         String path=resourceLoader.getResource("classpath:invoice.jrxml").getURI().getPath();
 //        JasperReport compileReport=JasperCompileManager.compileReport(new FileInputStream("src/main/resources/templates/invoice.jrxml"));
         System.out.println("path: "+path);
-        JasperReport compileReport=JasperCompileManager.compileReport(path);
+        InputStream employeeReportStream = getClass().getResourceAsStream("/invoice.jrxml");
+
+        JasperReport compileReport=JasperCompileManager.compileReport(employeeReportStream );
         HashMap<String,Object> map = new HashMap<>();
         map.put("session","04/2021 - 03/2022");
         map.put("paymentDate",new Date().toString());
