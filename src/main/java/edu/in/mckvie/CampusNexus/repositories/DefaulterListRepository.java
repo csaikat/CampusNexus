@@ -11,8 +11,8 @@ public interface DefaulterListRepository extends JpaRepository<DefaulterList,Int
     public DefaulterList findByUserId(int userId);
     @Query("select user from DefaulterList dl WHERE SEM1=false")
     public List<User> findBySem1();
-    @Query("select user from DefaulterList dl WHERE SEM2=false")
-    public List<User> findBySem2();
+
+    @Query("select user from DefaulterList dl WHERE SEM2=false") public List<User> findBySem2();
     @Query("select user from DefaulterList dl WHERE SEM3=false")
     public List<User> findBySem3();
     @Query("select user from DefaulterList dl WHERE SEM4=false")

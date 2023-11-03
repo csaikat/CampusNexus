@@ -1,7 +1,7 @@
 package edu.in.mckvie.CampusNexus.helper;
 
-import edu.in.mckvie.CampusNexus.entities.StudentDetails;
-import jakarta.mail.Multipart;
+import edu.in.mckvie.CampusNexus.entities.User;
+import edu.in.mckvie.CampusNexus.services.servicesimpl.StudentServiceImpl;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -9,18 +9,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class Helper {
-    public static boolean checkExcelFormat(MultipartFile file){
+
+
+    private StudentServiceImpl st=new StudentServiceImpl();
+    public  boolean checkExcelFormat(MultipartFile file){
         String contentType=file.getContentType();
         return contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     }
 
-    public static List<StudentDetails> convertExcelToListOfStudentDetails(InputStream is){
-        List<StudentDetails> list=new ArrayList<>();
+    public  List<User> convertExcelToListOfStudentDetails(InputStream is){
+        List<User> list=new ArrayList<>();
         try{
             XSSFWorkbook sheets = new XSSFWorkbook(is);
             XSSFSheet sheet=sheets.getSheet("Sheet1");
@@ -34,15 +36,46 @@ public class Helper {
                 }
                 Iterator<Cell> cells= row.iterator();
                 int cid=0;
-                StudentDetails studentDetails=new StudentDetails();
+                User studentDetails=new User();
                 while(cells.hasNext()){
                     Cell cell=cells.next();
                     switch (cid){
                         case 0:
-                            studentDetails.setName(cell.getStringCellValue());
+                            studentDetails.setCollageRollNumber(cell.getStringCellValue());
                             break;
                         case 1:
-                            studentDetails.setMailID(cell.getStringCellValue());
+                            studentDetails.setExamRollNumber(cell.getStringCellValue());
+                            break;
+                        case 2:
+                            studentDetails.setName(cell.getStringCellValue());
+                            break;
+                        case 3:
+                            studentDetails.setUniversityRollNumber(cell.getStringCellValue());
+                            break;
+                        case 4:
+                            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+                            Date date = formatter.parse(cell.getStringCellValue());
+                            studentDetails.setDob(date);
+                            break;
+                        case 5:
+                            //Optional<Department> d= departmentRepositories.findById((int)cell.getNumericCellValue());
+
+//                            //studentDetails.setDepartment();
+                            break;
+                        case 6:
+                            studentDetails.setLateral(Boolean.parseBoolean(String.valueOf(cell.getNumericCellValue())));
+                            break;
+                        case 7:
+                            studentDetails.setStreamChanger(Boolean.parseBoolean(String.valueOf(cell.getNumericCellValue())));
+                            break;
+                        case 8:
+                            studentDetails.setEmail(cell.getStringCellValue());
+                            break;
+                        case 9:
+                            studentDetails.setContactNumber(cell.getStringCellValue());
+                            break;
+                        case 10:
+                            studentDetails.setPassword("1234");
                             break;
                         default:
                             break;

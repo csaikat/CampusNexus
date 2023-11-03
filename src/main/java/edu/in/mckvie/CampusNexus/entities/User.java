@@ -22,22 +22,45 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    @Column(unique = true,nullable = false)
+     @Column(unique = true,nullable = false)
     private String email;
     private String password;
-    @Column(unique = true)
+     @Column(unique = true)
     private String universityRollNumber;
     private String contactNumber;
     @Temporal(TemporalType.DATE)
     private Date dob;
+
+    //add
+    @Column(unique = true,nullable = false,name = "collageRollNumber")
+    private String collageRollNumber;
+     @Column(unique = true,nullable = false,name = "examRollNumber")
+    private String examRollNumber;
+    @Column(columnDefinition = "boolean default 0")
+    private boolean isLateral;
+    @Column(columnDefinition = "boolean default 0")
+    private boolean isStreamChanger;
+    @Column(columnDefinition = "boolean default 0")
+    private boolean isEnrolled;
+    //
     @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles=new HashSet<>();
+    //
+    @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_subject",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "subject_id"))
+    private Set<Subject> subject=new HashSet<>();
     @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Department department;
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private Semester semester;
+
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date created_on;

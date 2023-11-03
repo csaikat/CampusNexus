@@ -3,6 +3,7 @@ package edu.in.mckvie.CampusNexus.payloads;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.in.mckvie.CampusNexus.entities.Department;
+import edu.in.mckvie.CampusNexus.entities.Semester;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -24,6 +25,17 @@ public class UserDto {
     private String contactNumber;
     @NotNull(message = "D.O.B must not be Null")
     private Date dob;
+
+    //add
+
+    private String collageRollNumber;
+
+    private String examRollNumber;
+    private boolean isEnrolled;
+    private boolean isLateral;
+    private boolean isStreamChanger;
+    //
+    private Semester semester;
     private String password;
     private Department department;
     private Set<RoleDTO> roles=new HashSet<>();

@@ -82,9 +82,9 @@ public class CampusNexusApplication implements CommandLineRunner {
 //		role.add(r);
 //		u.setRoles(role);
 //		this.userRepository.save(u);
-//		System.out.println(userRepository.findByUniversityRollNumber("111"));
-//
-//		System.out.println(String.valueOf(RoleConstants.ROLE_ADMIN));
+		//System.out.println(userRepository.findByUniversityRollNumber("111"));
+
+		//System.out.println(String.valueOf(RoleConstants.ROLE_ADMIN));
 		try{
 			//add default roles
 			Role role1=new Role();
@@ -183,10 +183,9 @@ public class CampusNexusApplication implements CommandLineRunner {
 			sem8.setName(String.valueOf(SemesterConstants.EIGHTH_SEM));
 			sem8.setFees(fees8);
 			sem8.setYear(year4);
-
-			List<Semester> sems=this.semesterRepositories.saveAll(List.of(sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8));
-			sems.forEach(s-> System.out.println(s.getName()));
-
+//cmnt
+			//List<Semester> sems=this.semesterRepositories.saveAll(List.of(sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8));
+			//sems.forEach(s-> System.out.println(s.getName()));
 
 
 
@@ -194,5 +193,6 @@ public class CampusNexusApplication implements CommandLineRunner {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+
 	}
 }

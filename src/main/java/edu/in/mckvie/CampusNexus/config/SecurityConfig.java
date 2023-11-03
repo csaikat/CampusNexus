@@ -38,7 +38,7 @@ public class SecurityConfig {
 
     public static final String [] PUBLIC_URL={
             "/api/v1/auth/authenticate/**","/pdf/**","/excel/**","/api/v1/user/**","/api/v1/permanent/**",
-            "/api/v1/mail/**"
+            "/api/v1/mail/**","/api/v1/subject/**"
     };
     @Bean
     public PasswordEncoder passwordEncoder() {

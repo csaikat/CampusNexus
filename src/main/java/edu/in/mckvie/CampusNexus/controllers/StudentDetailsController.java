@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.RequestScope;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
@@ -21,7 +20,8 @@ public class StudentDetailsController {
 
     @PostMapping("/upload")
     public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file){
-        if(Helper.checkExcelFormat(file)){
+        Helper h=new Helper();
+        if(h.checkExcelFormat(file)){
             this.studentService.save(file);
             return ResponseEntity.ok(Map.of("message","File is uploaded and data is saved to DB"));
         }

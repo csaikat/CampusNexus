@@ -17,12 +17,14 @@ public class Semester {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "sem",nullable = false)
+    @Column(name = "sem",nullable = false,unique = true)
     private String name;
     @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Fees fees;
     @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Year year;
+//    @ManyToMany(mappedBy = "semester")
+//    private Subject subject;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date created_on;

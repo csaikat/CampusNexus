@@ -19,6 +19,7 @@ public class ConcurrentLoginInterceptorServiceImple implements ConcurrentLoginIn
                                                   @Value("${spring.redis.port}") int port,@Value("${spring.redis.password}")String password) {
         jedis = new Jedis(host, port);
         System.out.println(password.isBlank());
+        jedis.flushAll();
         if(!password.isBlank())
             jedis.auth(password);
         System.out.println("Server is running: "+jedis.ping());
@@ -27,11 +28,17 @@ public class ConcurrentLoginInterceptorServiceImple implements ConcurrentLoginIn
         long ttl = Jwts.parser().setSigningKey(secret).parseClaimsJws(getData(key)).getBody().getExpiration().getTime()
                 - System.currentTimeMillis();
         System.out.println(ttl);
-        jedis.expire(key, 60);
+        jedis.expire(key, 120);
     }
 
     public void saveData(String key, String value) {
         jedis.set(key, value);
+        try{
+            blacklistToken(key);
+            logger.info("SuccessFully expire: "+key);
+        }catch(Exception e){
+            logger.info("Exception: "+e);
+        }
         logger.info("save: "+key+" : "+value);
     }
 

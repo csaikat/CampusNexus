@@ -69,7 +69,18 @@ public class AuthController {
            throw new UsernameNotFoundException("invalid user request!!");
         }
     }
-
+    @PostMapping("/authenticate/isActive")
+    public ResponseEntity<?> isKeyExits(@RequestBody JwtAuthRequest request){
+        UserDetails userDetails = this.userDetailsService.loadUserByUsername(request.getUsername());
+        String username=userDetails.getUsername();
+        System.out.println("pp"+username);
+        if(concurrentLoginInterceptorService.contain(username)){
+            return new ResponseEntity<>(new ApiResponse("Key Exists",true),HttpStatus.OK);
+        }
+        else{
+            return new ResponseEntity<>(new ApiResponse("Key Not Exists",false),HttpStatus.BAD_REQUEST);
+        }
+    }
     @PostMapping("/logout")
     public ResponseEntity<?> logout(@RequestBody User request, HttpServletRequest r) {
         String authorizationHeader = r.getHeader("Authorization");

@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -89,6 +90,61 @@ public class UserServiceImpl implements UserService {
 
     }
 
+ //find users information who payed fees and not enrolled
 
 
+    @Override
+    public Optional<User> getUserForEnroll(String uRoll) {
+        int semId=this.userRepository.findByUniversityRollNumber(uRoll).get().getSemester().getId();
+        System.out.println("semId"+semId);
+
+        Optional<User> u=null;
+        switch(semId){
+            case 1:
+                u=this.userRepository.getUserForEnrollForSem1(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 2:
+                u=this.userRepository.getUserForEnrollForSem2(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 3:
+                u=this.userRepository.getUserForEnrollForSem3(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 4:
+                u=this.userRepository.getUserForEnrollForSem4(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 5:
+                u=this.userRepository.getUserForEnrollForSem5(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 6:
+                u=this.userRepository.getUserForEnrollForSem6(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 7:
+                u=this.userRepository.getUserForEnrollForSem7(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+            case 8:
+                u=this.userRepository.getUserForEnrollForSem8(this.userRepository.findIdByUniversityRollNumber(uRoll));
+                System.out.println("op "+u);
+                break;
+
+        }
+        return u;
+    }
+
+    public User setEnroll(User user){
+        System.out.println(user);
+        String email=user.getEmail();
+        System.out.println(user.getEmail());
+        User u=this.userRepository.findByEmail(email).orElseThrow(()->new ResourceNotFoundException("user","not found",email));
+        u.setEnrolled(true);
+        u.setSubject(user.getSubject());
+        return this.userRepository.save(u);
+
+    }
 }
