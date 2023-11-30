@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.1.final using JasperReports Library version 6.20.1-7584acb244139816654f64e2fd57a00d3e31921e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c5169a06-1c08-49f2-9fa6-75fb63aceeb6">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <property name="com.jaspersoft.studio.unit." value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+    <property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+    <style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_CH" mode="Opaque" backcolor="#F0F6FC">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <subDataset name="subjectDataset" uuid="7906200e-06d4-418f-8d2b-827f30c7c4db">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="subjectCode" class="java.lang.String"/>
+        <field name="subjectName" class="java.lang.String"/>
+        <field name="paperType" class="java.lang.String"/>
+    </subDataset>
+    <parameter name="semName" class="java.lang.String"/>
+    <parameter name="name" class="java.lang.String"/>
+    <parameter name="deptName" class="java.lang.String"/>
+    <parameter name="universityRollNumber" class="java.lang.String"/>
+    <parameter name="examRollNumber" class="java.lang.String"/>
+    <parameter name="subjectDataSet" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="86" splitType="Stretch">
+            <image>
+                <reportElement x="20" y="13" width="80" height="60" uuid="c4d594fa-3e29-414c-b2b8-009c8bd0c615"/>
+                <imageExpression><![CDATA["https://upload.wikimedia.org/wikipedia/commons/5/55/Mckvie_logo1.jpg"]]></imageExpression>
+            </image>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="106" splitType="Stretch">
+            <staticText>
+                <reportElement x="136" y="0" width="282" height="30" uuid="aa6f801e-82d4-4c7b-a932-65015600de5c"/>
+                <textElement>
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[MCKV INSTITUTE OF ENGINEERING]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="53" y="26" width="448" height="30" uuid="9133d8bb-70d2-4ce5-ac07-0c4acc19aded"/>
+                <textElement>
+                    <font size="10" isBold="true"/>
+                </textElement>
+                <text><![CDATA[(An Autonomous Institution Affiliated to Maulana Abul Kalam Azad University of Technology)]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="57" y="46" width="440" height="30" uuid="97b3501a-862f-40fb-b25a-c69c48d0c235"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[243, G.T. ROAD (NORTH) LILUAH, HOWRAH-711204, WEST BENGAL, INDIA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="119" y="76" width="316" height="24" uuid="f142f0f2-a2a2-4a16-a55f-e1320ffa11b8"/>
+                <textElement>
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Enrollment Form 2021-22 for Regular Students]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <detail>
+        <band height="440" splitType="Stretch">
+            <rectangle>
+                <reportElement x="1" y="0" width="553" height="100" uuid="b5d1d00c-151b-46d0-9bd8-745b780fbf92"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="13" y="0" width="90" height="20" uuid="ea864d1f-f270-4310-81dc-50f9d5760a50"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Enrollment For :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="12" y="20" width="40" height="20" uuid="f1f4a778-4f65-42ce-af16-8bf6681537e8"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Name :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="13" y="40" width="100" height="20" uuid="a1c30b7e-f6e5-4d14-bb30-6078959ff288"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[For the Degree of :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="13" y="60" width="150" height="20" uuid="6ae9465d-4931-47f1-b180-83fe66a677c4"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Registration No. With Year :]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="13" y="80" width="52" height="20" uuid="86b2fa7a-f57e-4cb4-b42e-e46395c3bd92"/>
+                <textElement verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Roll No. :]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="191" y="2" width="218" height="18" uuid="df72210c-a942-428b-afb2-bb4ca3fc4014"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{semName}+" Enrollment 2021-22"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="191" y="20" width="218" height="20" uuid="0839aa0f-d923-46e5-a597-a6bd16dda377"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="191" y="40" width="332" height="20" uuid="8a5969d5-8b96-4790-93b9-ac916a32389d"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Bachelors Degree in B.Tech. in "+$P{deptName}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="191" y="60" width="238" height="20" uuid="e8b58d62-aa46-40ea-a651-44b1dc5d687d"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{universityRollNumber}+" OF 2021-2022"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="191" y="80" width="128" height="20" uuid="f6712799-cc30-462a-a5c3-4b884d1adbd1"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{examRollNumber}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="1" y="340" width="524" height="22" uuid="d69a6b39-6bd7-4e22-9fd8-a74de49d0140"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[In case of any discrepancy in paper, student must report to the Controller’s Office immediately for correction.]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="410" width="120" height="30" uuid="b448bfff-af47-4b92-84d2-e3cd70fa99f5"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[Signature of Principal/Dean/Director]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="430" y="410" width="124" height="30" uuid="916c7f7d-2716-4bfb-9ca0-ad4b585df06e"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[Applicant's Signature]]></text>
+            </staticText>
+            <componentElement>
+                <reportElement x="1" y="110" width="553" height="60" uuid="e88780d5-8879-4fb3-bd28-5ca7b7821605">
+                    <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+                    <property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+                    <property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+                    <property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+                </reportElement>
+                <jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+                    <datasetRun subDataset="subjectDataset" uuid="a1ff531c-dc61-4738-8f8b-2ca32542f0a1">
+                        <dataSourceExpression><![CDATA[$P{subjectDataSet}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:column width="100" uuid="287069fb-833b-43ce-8130-b47653276f3f">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="100" height="30" uuid="ff298074-dae2-4497-98be-038def1bc002">
+                                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                                </reportElement>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="11" isBold="true"/>
+                                    <paragraph leftIndent="5"/>
+                                </textElement>
+                                <text><![CDATA[SUBJECT CODE]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="100" height="30" uuid="5e26f48a-9dfd-4bff-914b-17724d0d665e">
+                                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                                </reportElement>
+                                <textElement textAlignment="Left" verticalAlignment="Middle">
+                                    <font size="11"/>
+                                    <paragraph leftIndent="5"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{subjectCode}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="320" uuid="908fd1d0-1e37-44aa-a9af-33c6b4633c35">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="320" height="30" uuid="b432cac9-fbf3-4a52-949c-4f4db35e0fb8">
+                                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                                </reportElement>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="11" isBold="true"/>
+                                    <paragraph leftIndent="5"/>
+                                </textElement>
+                                <text><![CDATA[SUBJECT NAME]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="320" height="30" uuid="e6262af7-c0c7-41b6-9f73-a0574d75ed6f">
+                                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                                </reportElement>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="11"/>
+                                    <paragraph leftIndent="5"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{subjectName}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                    <jr:column width="133" uuid="faed0ae4-0c2a-477b-b2a8-9d64a3675c83">
+                        <property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+                        <jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+                            <staticText>
+                                <reportElement x="0" y="0" width="133" height="30" uuid="6239bd61-8b8c-4250-946b-348e06f4c0b2">
+                                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                                </reportElement>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="11" isBold="true"/>
+                                    <paragraph leftIndent="5"/>
+                                </textElement>
+                                <text><![CDATA[PAPER TYPE]]></text>
+                            </staticText>
+                        </jr:columnHeader>
+                        <jr:detailCell style="Table_TD" height="30">
+                            <textField>
+                                <reportElement x="0" y="0" width="133" height="30" uuid="b84ded0c-eb39-48de-81c2-2902ef3a7570">
+                                    <property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+                                </reportElement>
+                                <textElement verticalAlignment="Middle">
+                                    <font size="11"/>
+                                    <paragraph leftIndent="5"/>
+                                </textElement>
+                                <textFieldExpression><![CDATA[$F{paperType}]]></textFieldExpression>
+                            </textField>
+                        </jr:detailCell>
+                    </jr:column>
+                </jr:table>
+            </componentElement>
+        </band>
+    </detail>
+</jasperReport>

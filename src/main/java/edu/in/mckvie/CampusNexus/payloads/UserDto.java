@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import edu.in.mckvie.CampusNexus.entities.Department;
 import edu.in.mckvie.CampusNexus.entities.Semester;
+import edu.in.mckvie.CampusNexus.entities.UpRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -40,6 +41,8 @@ public class UserDto {
     private Department department;
     private Set<RoleDTO> roles=new HashSet<>();
     private Date created_on;
+    private UpRole role1;
+    private String batch;
     @JsonProperty
     public void setPassword(String password) {
         this.password = password;

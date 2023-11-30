@@ -43,14 +43,14 @@ public class User implements UserDetails {
     @Column(columnDefinition = "boolean default 0")
     private boolean isEnrolled;
     //
-    @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST ,fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles=new HashSet<>();
     //
-    @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST,fetch = FetchType.EAGER)
     @JoinTable(
             name = "users_subject",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -60,11 +60,14 @@ public class User implements UserDetails {
     private Department department;
     @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
     private Semester semester;
-
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private UpRole role1;
+    private String batch;
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
     private Date created_on;
-
+    @Column(columnDefinition = "boolean default 0")
+    private boolean hasStudentCreditCard;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.roles.stream().map((role)->new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());

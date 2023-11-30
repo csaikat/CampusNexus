@@ -135,6 +135,7 @@ public class PaymentServiceImpl implements PaymentService {
         mailDTO.setSubject("Fees Payment");
         mailDTO.setMessage("Your payment is successfull");
         mailDTO.setAttachment(basePath+pdfName);
+        System.out.println("add  attachment");
         this.mailService.sendEmailWithAttachment(mailDTO);
 
         return  this.modelMapper.map(savedpaymentDetails,PaymentDetailsDTO.class);

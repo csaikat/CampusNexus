@@ -34,4 +34,5 @@ public class Subject {
         private Date created_on;
         @Transient
         private int count;
+        private String paperType;
 }

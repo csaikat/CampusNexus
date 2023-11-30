@@ -52,7 +52,7 @@
                 </image>
                 <image>
                     <reportElement x="460" y="30" width="50" height="50" uuid="fe1c14f9-72df-454b-b38b-7515d5f363fe"/>
-                    <imageExpression><![CDATA["repo:hdfc.png"]]></imageExpression>
+                    <imageExpression><![CDATA["https://startinup.up.gov.in/wp-content/uploads/2022/12/hdfc-logo.png"]]></imageExpression>
                 </image>
                 <staticText>
                     <reportElement x="100" y="90" width="360" height="50" uuid="92f70bc3-0776-428f-b4bc-4e0bef5dd750"/>
@@ -70,7 +70,7 @@
                 </staticText>
                 <image>
                     <reportElement x="25" y="45" width="120" height="40" uuid="fe8ad1fb-c612-4614-aa52-c269eb20ccb2"/>
-                    <imageExpression><![CDATA["repo:razorpay.png"]]></imageExpression>
+                    <imageExpression><![CDATA["https://startinup.up.gov.in/wp-content/uploads/2022/12/hdfc-logo.png"]]></imageExpression>
                 </image>
             </frame>
         </band>

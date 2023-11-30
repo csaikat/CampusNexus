@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -95,10 +97,19 @@ public class InvoiceServiceImpl implements InvoiceService {
         map.put("discountAmount",0.00);
         map.put("currency",studentPayment.getPaymentDetails().getCurrency());
 
+        BufferedImage image = ImageIO.read(getClass().getResource("/img/hdfc.png"));
+        System.out.println("ttt:"+image);
+        map.put("hdfc", image );
+
+        BufferedImage image1 = ImageIO.read(getClass().getResource("/img/razorpay.png"));
+        System.out.println("ttt:"+image1);
+        map.put("rzp", image1 );
 
         String pdfName="RAZORPAY-PAYMENT-RECEIPT-"+UUID.randomUUID()+".pdf";
         JasperPrint report=JasperFillManager.fillReport(compileReport,map,new JREmptyDataSource());
         File file=new File(basePath);
+
+
 
         if(!file.exists()){
             file.mkdir();
