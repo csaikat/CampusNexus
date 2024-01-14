@@ -1,13 +1,17 @@
 package edu.in.mckvie.CampusNexus.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
-@Table(name="orders")
+@Table(name="fees_orders")
 public class PaymentDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,6 +22,14 @@ public class PaymentDetails {
     private String status;
     private String paymentId;
     private String currency;
-   @Temporal(TemporalType.TIMESTAMP)
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn(name = "user_id")
+    private User user;
+//    @OneToOne(mappedBy = "paymentDetails")
+//    private StudentPayment studentPayment;
+    @Transient
+    private String universityRollNumber;
+    private int semId;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date created_on;
 }

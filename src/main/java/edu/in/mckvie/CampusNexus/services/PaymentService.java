@@ -1,12 +1,17 @@
 package edu.in.mckvie.CampusNexus.services;
 
 import com.razorpay.RazorpayException;
-import edu.in.mckvie.CampusNexus.entities.PaymentDetails;
+import edu.in.mckvie.CampusNexus.payloads.PaymentDetailsDTO;
 import edu.in.mckvie.CampusNexus.payloads.PaymentHandlerDTO;
+import jakarta.mail.MessagingException;
+import net.sf.jasperreports.engine.JRException;
 
-import java.util.Map;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
+
 
 public interface PaymentService {
-    public PaymentDetails createOrder(PaymentDetails payment) throws RazorpayException;
-    public PaymentDetails updateOrder(PaymentHandlerDTO paymentHandlerDTO);
+    public PaymentDetailsDTO createOrder(PaymentDetailsDTO paymentDetailsDTO) throws RazorpayException;
+    public PaymentDetailsDTO updateOrder(PaymentHandlerDTO paymentHandlerDTO) throws JRException, IOException, MessagingException, ParseException;
 }

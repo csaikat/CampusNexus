@@ -5,7 +5,9 @@ import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
 import edu.in.mckvie.CampusNexus.controllers.PaymentController;
 import edu.in.mckvie.CampusNexus.entities.PaymentDetails;
+import edu.in.mckvie.CampusNexus.entities.User;
 import edu.in.mckvie.CampusNexus.repositories.PaymentRepository;
+import edu.in.mckvie.CampusNexus.repositories.UserRepository;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,13 +24,15 @@ public class PaymentHandler {
     @Value("${razorpay.key_secret}")
     private  String key_secret;
     @Autowired
-    private PaymentRepository mckvPaymentOrderRepository;
+    private PaymentRepository paymentRepository;
+    @Autowired
+    UserRepository userRepository;
     Logger logger= LoggerFactory.getLogger(PaymentController.class);
-    public PaymentDetails createOrder(int amount) throws RazorpayException {
+    public PaymentDetails createOrder(int amount,String uRoll,int semId) throws RazorpayException {
         RazorpayClient razorpay = new RazorpayClient(this.key_id,this.key_secret);
         //create new order
         Order order=null;
-        PaymentDetails mckvPaymentOrder=null;
+        PaymentDetails paymentDetails=null;
         try {
             JSONObject orderRequest = new JSONObject();
             orderRequest.put("amount", amount*100);
@@ -36,21 +40,25 @@ public class PaymentHandler {
             orderRequest.put("receipt", "txn_235425_11");
             order = razorpay.orders.create(orderRequest);
             //save order in database
-            mckvPaymentOrder=new PaymentDetails();
-            mckvPaymentOrder.setPaymentId(null);
-            mckvPaymentOrder.setStatus(order.get("status"));
-            mckvPaymentOrder.setAmount(order.get("amount")+"");
-            mckvPaymentOrder.setOrderId(order.get("id"));
-            mckvPaymentOrder.setReceipt(order.get("receipt"));
-            mckvPaymentOrder.setCurrency(order.get("currency"));
-            mckvPaymentOrder.setCreated_on(new Date());
-            mckvPaymentOrderRepository.save(mckvPaymentOrder);
+            paymentDetails=new PaymentDetails();
+            paymentDetails.setPaymentId(null);
+            paymentDetails.setStatus(order.get("status"));
+            paymentDetails.setAmount(order.get("amount")+"");
+            paymentDetails.setOrderId(order.get("id"));
+            paymentDetails.setReceipt(order.get("receipt"));
+            paymentDetails.setCurrency(order.get("currency"));
+            paymentDetails.setCreated_on(new Date());
+            User u=new User();
+            u.setId(userRepository.findByUniversityRollNumber(uRoll).get().getId());
+            paymentDetails.setUser(u);
+            paymentDetails.setSemId(semId);
+            paymentRepository.save(paymentDetails);
 
             logger.info("order: {}",order);
-            logger.info("order: {}",mckvPaymentOrder);
+            logger.info("order: {}",paymentDetails);
         } catch (RazorpayException e) {
             logger.error(e.getMessage());
         }
-        return mckvPaymentOrder;
+        return paymentDetails;
     }
 }
