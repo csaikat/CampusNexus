@@ -19,6 +19,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,7 +36,10 @@ public class UserServiceImpl implements UserService {
     private MailService mailService;
     @Autowired
     private DefaulterListRepository defaulterListRepository;
-
+    @Override
+    public List<User> getUsers(){
+        return this.userRepository.findAll();
+    }
     @Override
     public UserDto register(UserDto userDto) {
         System.out.println(userDto);
@@ -77,7 +81,7 @@ public class UserServiceImpl implements UserService {
     public String sendOtpEmail(UserDto userDto){
         User user = this.modelMapper.map(userDto, User.class);
         User foundUser = this.userRepository.findByEmail(user.getEmail())
-                .orElseThrow(() -> new ResourceNotFoundException("user not found", "email", user.getEmail()));
+                .orElseThrow(() -> new ResourceNotFoundException("user not found with", " emailId- ", user.getEmail()));
         String otp=OtpGenerator.getOTP(6);
         MailDTO mailDTO=new MailDTO();
         mailDTO.setTo(foundUser.getEmail());
@@ -146,5 +150,9 @@ public class UserServiceImpl implements UserService {
         u.setSubject(user.getSubject());
         return this.userRepository.save(u);
 
+    }
+    @Override
+    public User getUserByMail(String mail){
+        return this.userRepository.findByEmail(mail).orElseThrow(()->new ResourceNotFoundException("user: ",mail,"not found"));
     }
 }

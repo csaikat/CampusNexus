@@ -95,7 +95,7 @@ public class CampusNexusApplication implements CommandLineRunner {
 			UpRole ur2=new UpRole();
 			ur2.setRole("STUDENT");
 			ur2.setId(2);
-			//this.upRoleRepository.saveAll(List.of(ur1,ur2));
+			this.upRoleRepository.saveAll(List.of(ur1,ur2));
 
 			//add default roles
 			Role role1=new Role();
@@ -195,12 +195,8 @@ public class CampusNexusApplication implements CommandLineRunner {
 			sem8.setFees(fees8);
 			sem8.setYear(year4);
 			//cmnt this
-			//List<Semester> sems=this.semesterRepositories.saveAll(List.of(sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8));
-			//sems.forEach(s-> System.out.println(s.getName()));
-
-
-
-
+			List<Semester> sems=this.semesterRepositories.saveAll(List.of(sem1,sem2,sem3,sem4,sem5,sem6,sem7,sem8));
+			sems.forEach(s-> System.out.println(s.getName()));
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

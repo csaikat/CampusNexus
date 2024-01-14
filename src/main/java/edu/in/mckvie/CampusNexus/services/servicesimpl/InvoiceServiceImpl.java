@@ -1,34 +1,35 @@
 package edu.in.mckvie.CampusNexus.services.servicesimpl;
 
+import com.amazonaws.services.s3.AmazonS3;
 import edu.in.mckvie.CampusNexus.entities.StudentPayment;
+import edu.in.mckvie.CampusNexus.helper.FileUploadHelper;
 import edu.in.mckvie.CampusNexus.repositories.StudentPaymentRepository;
 import edu.in.mckvie.CampusNexus.services.InvoiceService;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.jasperreports.engine.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.UUID;
-
 @Service
+@Slf4j
 public class InvoiceServiceImpl implements InvoiceService {
+    @Autowired
+    private FileUploadHelper fileUploadHelper;
     @Autowired
     private StudentPaymentRepository studentPaymentRepository;
     @Autowired
     private ResourceLoader resourceLoader;
     @Override
     public byte[] generateAndServeInvoice() throws FileNotFoundException, JRException {
-
-
         //JRBeanCollectionDataSource jrBeanCollectionDataSource=new JRBeanCollectionDataSource();
         JasperReport compileReport=JasperCompileManager.compileReport(new FileInputStream("src/main/resources/templates/invoice.jrxml"));
         HashMap<String,Object> map = new HashMap<>();
@@ -55,15 +56,22 @@ public class InvoiceServiceImpl implements InvoiceService {
 //        HttpHeaders headers=new HttpHeaders();
 //        headers.set(HttpHeaders.CONTENT_DISPOSITION,"inline;filename=invoice.pdf");
 //        return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF).body(pdfData);
-
         return pdfData;
     }
-    @Value("${project.image}")
-    String basePath;
+
+
+    @Value("${application.bucket.name}")
+    private String bucketName;
+
+    @Autowired
+    private AmazonS3 s3Client;
+    @Autowired
+    private StorageServiceImpl storageServiceImpl;
     @Override
     public String generateInvoice(int userId,int semId) throws IOException, JRException, ParseException {
         //fetch payment details
-
+        String basePath=this.fileUploadHelper.UPLOAD_DIR;
+        log.info("basepath: {}",basePath);
         StudentPayment studentPayment=this.studentPaymentRepository.findByUserIdAndSemId(userId,semId);
         System.out.println("payment-details: "+studentPayment);
         DateFormat formatter = new SimpleDateFormat("MM-yy");
@@ -72,14 +80,14 @@ public class InvoiceServiceImpl implements InvoiceService {
 
         System.out.println("year:"+studentPayment.getSemester().getYear().getName());
         String year=studentPayment.getSemester().getYear().getName();
-        String path=resourceLoader.getResource("classpath:invoice.jrxml").getURI().getPath();
+        //String path=resourceLoader.getResource("classpath:invoice.jrxml").getURI().getPath();
 //        JasperReport compileReport=JasperCompileManager.compileReport(new FileInputStream("src/main/resources/templates/invoice.jrxml"));
-        System.out.println("path: "+path);
-        InputStream employeeReportStream = getClass().getResourceAsStream("/invoice.jrxml");
+      //  System.out.println("path: "+path);
+        InputStream employeeReportStream = getClass().getResourceAsStream("/static/report/invoice.jrxml");
 
         JasperReport compileReport=JasperCompileManager.compileReport(employeeReportStream );
         HashMap<String,Object> map = new HashMap<>();
-        map.put("session","04/2021 - 03/2022");
+        map.put("session",studentPayment.getPaymentDetails().getUser().getBatch());
         map.put("paymentDate",new Date().toString());
         map.put("paymentFor",studentPayment.getPaymentDetails().getUser().getName());
         map.put("class",year);
@@ -96,28 +104,21 @@ public class InvoiceServiceImpl implements InvoiceService {
         map.put("paid",paid);
         map.put("discountAmount",0.00);
         map.put("currency",studentPayment.getPaymentDetails().getCurrency());
+        String path1= ServletUriComponentsBuilder.fromCurrentContextPath().path("/img/").toUriString()+"razorpay.png";
+        map.put("logo",path1);
 
-        BufferedImage image = ImageIO.read(getClass().getResource("/img/hdfc.png"));
-        System.out.println("ttt:"+image);
-        map.put("hdfc", image );
-
-        BufferedImage image1 = ImageIO.read(getClass().getResource("/img/razorpay.png"));
-        System.out.println("ttt:"+image1);
-        map.put("rzp", image1 );
-
-        String pdfName="RAZORPAY-PAYMENT-RECEIPT-"+UUID.randomUUID()+".pdf";
+        String pdfName="RAZORPAY-PAYMENT-RECEIPT-"+ studentPayment.getPaymentDetails().getUser().getExamRollNumber()+"_"+semId+".pdf";
         JasperPrint report=JasperFillManager.fillReport(compileReport,map,new JREmptyDataSource());
         File file=new File(basePath);
-
-
-
         if(!file.exists()){
+            log.info("mkdir");
             file.mkdir();
         }
-        String upload_path=basePath+pdfName;
-        System.out.println("basepath: "+upload_path);
+        String upload_path=basePath+File.separator+pdfName;
+        log.info("basepath: {}"+upload_path);
         JasperExportManager.exportReportToPdfFile(report, upload_path);
-        System.out.println("exported");
+        log.info("exported");
         return pdfName;
     }
+
 }

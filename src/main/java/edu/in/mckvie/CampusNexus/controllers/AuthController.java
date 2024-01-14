@@ -46,8 +46,10 @@ public class AuthController {
     private ConcurrentLoginInterceptorService concurrentLoginInterceptorService;
 
     @PostMapping("/authenticate/login")
-    public ResponseEntity<?> createToken(@RequestBody JwtAuthRequest request) throws Exception {;
-        Authentication authentication=this.authenticate(request.getUsername(),request.getPassword());
+    public ResponseEntity<?> createToken(@RequestBody JwtAuthRequest request) throws Exception {
+        int roleId=this.userService.getUserByMail(request.getUsername()).getRole1().getId();
+        System.out.println("id:"+roleId);
+        Authentication authentication=this.authenticate(request.getUsername(),request.getPassword(),roleId,2);
         if(authentication.isAuthenticated()){
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(request.getUsername());
             String username=userDetails.getUsername();
@@ -69,10 +71,38 @@ public class AuthController {
            throw new UsernameNotFoundException("invalid user request!!");
         }
     }
+    //admin login
+    @PostMapping("/authenticate/admin-login")
+    public ResponseEntity<?> createToken1(@RequestBody JwtAuthRequest request) throws Exception {
+        int roleId=this.userService.getUserByMail(request.getUsername()).getRole1().getId();
+        System.out.println("id:"+roleId);
+        Authentication authentication=this.authenticate(request.getUsername(),request.getPassword(),roleId,1);
+        if(authentication.isAuthenticated()){
+            UserDetails userDetails = this.userDetailsService.loadUserByUsername(request.getUsername());
+            String username=userDetails.getUsername();
+            if(concurrentLoginInterceptorService.contain(username)){
+                return new ResponseEntity<ApiResponse>
+                        (new ApiResponse("Session already active with username :"+username,false),HttpStatus.UNAUTHORIZED);
+            }
+            //generate token
+            String token= this.jwtTokenHelper.generateToken(userDetails);
+            //intercept
+            concurrentLoginInterceptorService.saveData(username, token);
+//            concurrentLoginInterceptorService.blacklistToken(username);
+            JwtAuthResponse response=new JwtAuthResponse();
+            response.setToken(token);
+            response.setUser(this.modelMapper.map((User)userDetails,UserDto.class));
+            return new ResponseEntity<JwtAuthResponse>(response, HttpStatus.OK);
+        }
+        else{
+            throw new UsernameNotFoundException("invalid user request!!");
+        }
+    }
     @PostMapping("/authenticate/isActive")
     public ResponseEntity<?> isKeyExits(@RequestBody JwtAuthRequest request){
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(request.getUsername());
         String username=userDetails.getUsername();
+
         System.out.println("pp"+username);
         if(concurrentLoginInterceptorService.contain(username)){
             return new ResponseEntity<>(new ApiResponse("Key Exists",true),HttpStatus.OK);
@@ -92,17 +122,44 @@ public class AuthController {
         return new ResponseEntity<>(new ApiResponse("Logout Successfully",true),HttpStatus.OK);
     }
 
-    private Authentication authenticate(String username, String password) throws Exception {
-        Authentication authentication=null;
-        UsernamePasswordAuthenticationToken authenticationToken=
-                new UsernamePasswordAuthenticationToken(username,password);
-        try {
-           authentication= this.authenticationManager.authenticate(authenticationToken);
+    private Authentication authenticate(String username, String password,int roleId,int type) throws Exception {
+        if(type==1){
+            if(roleId!=2){
+                Authentication authentication=null;
+                UsernamePasswordAuthenticationToken authenticationToken=
+                        new UsernamePasswordAuthenticationToken(username,password);
+                try {
+                    authentication= this.authenticationManager.authenticate(authenticationToken);
+                }
+                catch (BadCredentialsException e) {
+                    throw new AuthException("Invalid Username And Password !!");
+                }
+                return authentication;
+            }
+            else{
+                throw new AuthException("Student can not log in here!!");
+            }
         }
-        catch (BadCredentialsException e) {
-            throw new AuthException("Invalid Username And Password !!");
+        else if(type==2){
+            if(roleId!=1){
+                Authentication authentication=null;
+                UsernamePasswordAuthenticationToken authenticationToken=
+                        new UsernamePasswordAuthenticationToken(username,password);
+                try {
+                    authentication= this.authenticationManager.authenticate(authenticationToken);
+                }
+                catch (BadCredentialsException e) {
+                    throw new AuthException("Invalid Username And Password !!");
+                }
+                return authentication;
+            }
+            else{
+                throw new AuthException("Admin can not log in here!!");
+            }
         }
-        return authentication;
+        else{
+            throw new AuthException("unknown type !!");
+        }
     }
     @PostMapping("/authenticate/register")
     public ResponseEntity<UserDto> register(@Valid @RequestBody UserDto userDto){
